@@ -1,0 +1,817 @@
+@extends('Admin.layouts.default')
+@section('PageTitle')
+@if(isset($pagetitle))
+{{$pagetitle}}
+@endif
+@stop
+@section('content')
+
+<!-- MAIN -->
+<div class="main">
+	
+	<!-- MAIN CONTENT -->
+	<div class="main-content">
+		<h1 class="page-header">{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_GENERAL_SETTINGS')) ? trans(Session::get('admin_lang_file').'.ADMIN_GENERAL_SETTINGS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_GENERAL_SETTINGS')}}</h1>
+		<div class="container-fluid">
+			
+			
+			<div class="row">
+				<div class="container right-container">
+					<div class="r-btn">
+					</div>
+					<div class="col-md-12">
+						
+						
+						<!-- INPUTS -->
+						<div class="panel">
+							
+							@if ($errors->any())
+							<div class="alert alert-warning alert-dismissible">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<ul>
+									@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+							@endif
+							
+							
+							@if(count($settings_details) > 0)
+							@php
+							foreach($settings_details as $set_val){ }
+							
+							@endphp
+							<div class="panel-body">
+								{{ Form::open(array('url' => 'admin-general-settings-submit','method' => 'post','id'=>'general_settings_form','class'=>'form-horizontal')) }}
+								
+								{{ Form::hidden('siteid', $set_val->gs_id,array('class' => 'form-control')) }}
+								<div class="form-group">
+									{{ Form::label('sitename', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_NAME')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_NAME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_NAME'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('sitename', $set_val->gs_sitename,array('class' => 'form-control','maxlength'=>'100','id'=>'sitename','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_NAME')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_NAME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_NAME'))) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_BANNER_TEXT'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('site_banner_text', $set_val->gs_banner_text,array('class' => 'form-control','maxlength'=>'100','id'=>'site_banner_text','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_BANNER_TEXT'))) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('email', (Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_EMAIL'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::email('email',$set_val->gs_email,array('class' => 'form-control','maxlength'=>'200','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_EMAIL'))) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('phone', (Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_PHONE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('phone',$set_val->gs_phone,array('class' => 'form-control','maxlength'=>'15','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_PHONE'),'onkeypress'=>"return onlyNumbers(event);")) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('description', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_DESCRIPTION'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::textarea('description',$set_val->gs_sitedescription,array('class' => 'form-control','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_DESCRIPTION'))) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('metatitle', (Lang::has(Session::get('admin_lang_file').'.ADMIN_META_TITLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_TITLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_TITLE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('metatitle', $set_val->gs_metatitle,array('class' => 'form-control','maxlength'=>'100','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_META_TITLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_TITLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_TITLE'))) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('metakeywords', (Lang::has(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_KEYWORDS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::textarea('metakeywords',$set_val->gs_metakeywords,array('class' => 'form-control','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_KEYWORDS'))) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('metadescription', (Lang::has(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_DESCRIPTION'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::textarea('metadescription',$set_val->gs_metadesc,array('class' => 'form-control','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_DESCRIPTION'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('footertext', (Lang::has(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_FOOTER_TEXT'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('footertext',$set_val->footer_text,array('class' => 'form-control','maxlength'=>'100','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_FOOTER_TEXT'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('itunes_url', (Lang::has(Session::get('admin_lang_file').'.ADMIN_ITUNES')) ? trans(Session::get('admin_lang_file').'.ADMIN_ITUNES') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ITUNES'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('itunes_url',$set_val->gs_apple_appstore_url,array('class' => 'form-control','maxlength'=>'500','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_ITUNES')) ? trans(Session::get('admin_lang_file').'.ADMIN_ITUNES') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ITUNES'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('playstore_url', (Lang::has(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLAYSTORE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('playstore_url',$set_val->gs_playstore_url,array('class' => 'form-control','maxlength'=>'500','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLAYSTORE'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_OTP_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_OTP_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_OTP_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('otp_status','1',($set_val->otp_verification_status == 1) ? 'checked' : '' ,['id' => 'enable1','required']) }}
+										{{ Form::label('enable1',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('otp_status','0',($set_val->otp_verification_status == 0) ? 'checked' : ''  ,['id' => 'disable1','required']) }}
+										{{ Form::label('disable1',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div class="" id="otpDiv" style="@if($set_val->otp_verification_status !='1') display:none @endif">
+									<div class="form-group">
+										{{ Form::label('gs_twilio_sid', (Lang::has(Session::get('admin_lang_file').'.ADMIN_TWILIO_SID')) ? trans(Session::get('admin_lang_file').'.ADMIN_TWILIO_SID') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_TWILIO_SID'),array('class'=>'control-label col-sm-2 starclass')) }}
+										<div class="col-sm-4">
+											{{ Form::text('gs_twilio_sid',$set_val->gs_twilio_sid,array('class' => 'form-control','maxlength'=>'100')) }}
+										</div> 
+									</div>
+									<div class="form-group">
+										{{ Form::label('gs_twilio_token', (Lang::has(Session::get('admin_lang_file').'.ADMIN_TWILIO_TOKEN')) ? trans(Session::get('admin_lang_file').'.ADMIN_TWILIO_TOKEN') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_TWILIO_TOKEN'),array('class'=>'control-label col-sm-2 starclass')) }}
+										<div class="col-sm-4">
+											{{ Form::text('gs_twilio_token',$set_val->gs_twilio_token,array('class' => 'form-control','maxlength'=>'100')) }}
+										</div> 
+									</div>
+									<div class="form-group">
+										{{ Form::label('gs_twilio_from', (Lang::has(Session::get('admin_lang_file').'.ADMIN_TWILIO_FROM')) ? trans(Session::get('admin_lang_file').'.ADMIN_TWILIO_FROM') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_TWILIO_FROM'),array('class'=>'control-label col-sm-2 starclass')) }}
+										<div class="col-sm-4">
+											{{ Form::text('gs_twilio_from',$set_val->gs_twilio_from,array('class' => 'form-control','maxlength'=>'15','onkeypress'=>'return onlyNumbers(event);')) }}
+										</div>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_MAIL_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_MAIL_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_MAIL_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('mail_status','1',($set_val->mail_verification_status == 1) ? 'checked' : '' ,['id' => 'enable2','required']) }}
+										{{ Form::label('enable2',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('mail_status','0',($set_val->mail_verification_status == 0) ? 'checked' : ''  ,['id' => 'disable2','required']) }}
+									{{ Form::label('disable2',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SELF_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_SELF_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SELF_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('self_status','1',($set_val->self_pickup_status == 1) ? 'checked' : '' ,['id' => 'enable3','required']) }}
+										{{ Form::label('enable3',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('self_status','0',($set_val->self_pickup_status == 0) ? 'checked' : ''  ,['id' => 'disable3','required']) }}
+									{{ Form::label('disable3',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SHOW_INVENTORY')) ? trans(Session::get('admin_lang_file').'.ADMIN_SHOW_INVENTORY') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SHOW_INVENTORY'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_show_inventory','1',($set_val->gs_show_inventory == 1) ? 'checked' : '',['id' => 'yes','required']) }}
+										{{ Form::label('yes',(Lang::has(Session::get('admin_lang_file').'.ADMIN_YES')) ? trans(Session::get('admin_lang_file').'.ADMIN_YES') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_YES')) }}
+										{{ Form::radio('gs_show_inventory','0',($set_val->gs_show_inventory == 0) ? 'checked' : '',['id' => 'no','required']) }}
+										{{ Form::label('no',(Lang::has(Session::get('admin_lang_file').'.ADMIN_NO')) ? trans(Session::get('admin_lang_file').'.ADMIN_NO') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_NO')) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DELIVERY_FEE_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_delivery_fee_status','1',($set_val->gs_delivery_fee_status == 1) ? 'checked' : '',['id' => 'enable4','required']) }}
+										{{ Form::label('enable4',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_delivery_fee_status','0',($set_val->gs_delivery_fee_status == 0) ? 'checked' : '',['id' => 'disable4','required']) }}
+									{{ Form::label('disable4',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}</div>
+								</div>
+								<div class="form-group" id="deliverFeeDiv" style="@if($set_val->gs_delivery_fee_status!='1') display:none @endif">
+									{{ Form::label('dlivery_fee', (Lang::has(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DELIVERY_FEE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_delivery_fee',$set_val->gs_delivery_fee,array('class' => 'form-control','maxlength'=>'10','onkeypress'=>"return onlyNumbersWithDot(event);",'placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DELIVERY_FEE'))) }}
+									</div>
+									<div class="col-sm-2">
+										{!! Form::text('deli_curr',$default_currency,['readonly','class' => 'form-control'])!!}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_CART_MAIL')) ? trans(Session::get('admin_lang_file').'.ADMIN_CART_MAIL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CART_MAIL'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_abandoned_mail','1',($set_val->gs_abandoned_mail == 1) ? 'checked' : '',['id' => 'enable','required']) }}
+										{{ Form::label('enable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_abandoned_mail','0',($set_val->gs_abandoned_mail == 0) ? 'checked' : '',['id' => 'disable','required']) }}
+										{{ Form::label('disable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div class="form-group" id="mailDiv" style="@if($set_val->gs_abandoned_mail!='1') display:none @endif">
+									{{ Form::label('gs_mail', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SEND_MAIL_AFTER')) ? trans(Session::get('admin_lang_file').'.ADMIN_SEND_MAIL_AFTER') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SEND_MAIL_AFTER'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_mail_after',$set_val->gs_mail_after,array('class' => 'form-control','maxlength'=>'3','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_MAIL_AFTER')) ? trans(Session::get('admin_lang_file').'.ADMIN_MAIL_AFTER') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_MAIL_AFTER'),'onkeypress'=> 'return onlyNumbers(event)')) }}
+									</div>
+									<div class="col-sm-2">
+										{{ Form::text('mail_duration', __(Session::get('admin_lang_file').'.ADMIN_HOUR'),['class' => 'form-control','readonly'])}}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_INVITE_FRNDS')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVITE_FRNDS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVITE_FRNDS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_refer_friend','1',($set_val->gs_refer_friend == 1) ? 'checked' : '',['id' => 'enable_r','required']) }}
+										{{ Form::label('enable_r',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_refer_friend','0',($set_val->gs_refer_friend == 0) ? 'checked' : '',['id' => 'disable_r','required']) }}
+										{{ Form::label('disable_r',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+
+								<div class="form-group" id="referDiv" style="@if($set_val->gs_refer_friend!='1') display:none @endif">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT')) ? trans(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_OFFER_PERCENT'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('gs_offer_percentage',$set_val->gs_offer_percentage,array('class' => 'form-control','maxlength'=>'2','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT')) ? trans(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_OFFER_PERCENT'),'onkeypress'=> 'return onlyNumbers(event)')) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_PW_PROTECT')) ? trans(Session::get('admin_lang_file').'.ADMIN_PW_PROTECT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PW_PROTECT'),array('class'=>'control-label col-sm-2 starclass')) }}&nbsp;<i class="fa fa-info-circle tooltip-demo" title="If it enable customer need to set password with one special character and one number" style="float: left;padding:10px 0 0 0px;"></i>
+									<div class="col-sm-6">
+										{{ Form::radio('gs_password_protect','1',($set_val->gs_password_protect == 1) ? 'checked' : '',['id' => 'enable_pw','required']) }}
+										{{ Form::label('enable_pw',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_password_protect','0',($set_val->gs_password_protect == 0) ? 'checked' : '',['id' => 'disable_pw','required']) }}
+										{{ Form::label('disable_pw',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SH_CAPTCHA')) ? trans(Session::get('admin_lang_file').'.ADMIN_SH_CAPTCHA') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SH_CAPTCHA'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_show_captcha','1',($set_val->gs_show_captcha == 1) ? 'checked' : '',['id' => 'enable_sc','required']) }}
+										{{ Form::label('enable_sc',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_show_captcha','0',($set_val->gs_show_captcha == 0) ? 'checked' : '',['id' => 'disable_sc','required']) }}
+										{{ Form::label('disable_sc',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_HIPPO_CHAT_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_hippo_chat_status','1',($set_val->gs_hippo_chat_status == 1) ? 'checked' : '',['id' => 'enable5','required']) }}
+										{{ Form::label('enable5',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_hippo_chat_status','0',($set_val->gs_hippo_chat_status == 0) ? 'checked' : '',['id' => 'disable5','required']) }}
+										{{ Form::label('disable5',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div class="form-group" id="hippochatDiv" style="@if($set_val->gs_hippo_chat_status!='1') display:none @endif">
+									{{ Form::label('gs_hippo_secret_key', (Lang::has(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY')) ? trans(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_HIPPO_CHAT_SECRET_KEY'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_hippo_secret_key',$set_val->gs_hippo_secret_key,array('class' => 'form-control','maxlength'=>'100','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY')) ? trans(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_HIPPO_CHAT_SECRET_KEY'))) }}
+									</div>
+								</div>
+								<!-- INVALID LOGIN ATTMEPTS -->
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_SUSPEND')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_SUSPEND') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVALID_LOGIN_SUSPEND'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('suspend_status','1',($set_val->suspend_status == 1) ? 'checked' : '',['id' => 'suspend_enable','required']) }}
+										{{ Form::label('suspend_enable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('suspend_status','0',($set_val->suspend_status == 0) ? 'checked' : '',['id' => 'suspend_disable','required']) }}
+										{{ Form::label('suspend_disable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div id="suspendStatusDiv" style="@if($set_val->suspend_status!='1') display:none @endif">
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVALID_LOGIN_ATTEMPTS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('max_attempt',$set_val->max_attempt,array('class' => 'form-control','maxlength'=>'2','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVALID_LOGIN_ATTEMPTS'),'onkeypress'=>'return onlyNumbers(event)')) }}
+									</div>
+								</div>
+
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME')) ? trans(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_LOGIN_SUSPEND_TIME'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('suspend_time',$set_val->suspend_time,array('class' => 'form-control','maxlength'=>'2','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME')) ? trans(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_LOGIN_SUSPEND_TIME'),'onkeypress'=>'return onlyNumbers(event)')) }}
+									</div>
+									<div class="col-sm-2">
+										{{ Form::select('suspend_duration',['minutes' => 'Minutes','hours' => 'Hours'],$set_val->suspend_duration,['class' => 'form-control'])}}
+									</div>
+								</div>
+									<div class="form-group">
+										{{ Form::label('','Commission Settings',array('class'=>'control-label col-sm-2 starclass')) }}
+										<div class="col-sm-4">
+											<input class="form-control" maxlength="5" placeholder="commission(%)" name="commissionpercentage" type="text" value="{{$set_val->common_commission}}">
+										</div>
+									</div>
+								</div>
+								<div class="panel-heading col-md-offset-2">
+									{{ Form::submit('Submit',array('class'=>'btn btn-success')) }}
+								</div>
+								{{ Form::close() }}
+								
+							</div>
+							@else
+							<div class="panel-body">
+								{{ Form::open(array('url' => 'admin-general-settings-submit','method' => 'post','id'=>'general_settings_form','class'=>'form-horizontal')) }}
+								
+								{{ Form::hidden('siteid','',array('class' => 'form-control')) }}
+								<div class="form-group">
+									{{ Form::label('sitename', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_NAME')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_NAME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_NAME'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('sitename','',array('class' => 'form-control','id'=>'sitename','maxlength'=>'100','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_NAME')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_NAME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_NAME'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_BANNER_TEXT'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('site_banner_text','',array('class' => 'form-control','id'=>'site_banner_text','maxlength'=>'100','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_BANNER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_BANNER_TEXT'))) }}</div>
+								</div>
+
+								<div class="form-group">
+									{{ Form::label('email', (Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_EMAIL'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::email('email',"",array('class' => 'form-control','maxlength'=>'200','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_EMAIL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_EMAIL'))) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('phone', (Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_PHONE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('phone','',array('class' => 'form-control','maxlength'=>'15','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE')) ? trans(Session::get('admin_lang_file').'.ADMIN_CNCT_PHONE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CNCT_PHONE'),'onkeypress'=>"return onlyNumbers(event);")) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('description', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_DESCRIPTION'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::textarea('description','',array('class' => 'form-control','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_SITE_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SITE_DESCRIPTION'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('metatitle', (Lang::has(Session::get('admin_lang_file').'.ADMIN_META_TITLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_TITLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_TITLE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('metatitle', '',array('class' => 'form-control','maxlength'=>'200','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_META_TITLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_TITLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_TITLE'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('metakeywords', (Lang::has(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_KEYWORDS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::textarea('metakeywords','',array('class' => 'form-control','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_KEYWORDS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_KEYWORDS'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('metadescription', (Lang::has(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_DESCRIPTION'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::textarea('metadescription','',array('class' => 'form-control','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_META_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_META_DESCRIPTION'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('footertext', (Lang::has(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_FOOTER_TEXT'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('footertext','',array('class' => 'form-control','maxlength'=>'200','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_FOOTER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_FOOTER_TEXT'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('itunes_url', (Lang::has(Session::get('admin_lang_file').'.ADMIN_ITUNES')) ? trans(Session::get('admin_lang_file').'.ADMIN_ITUNES') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ITUNES'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('itunes_url','',array('class' => 'form-control','maxlength'=>'500','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_ITUNES')) ? trans(Session::get('admin_lang_file').'.ADMIN_ITUNES') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ITUNES'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('playstore_url', (Lang::has(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLAYSTORE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+									{{ Form::text('playstore_url','',array('class' => 'form-control','maxlength'=>'500','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLAYSTORE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLAYSTORE'))) }}</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_OTP_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_OTP_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_OTP_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('otp_status','1','' ,['id' => 'enable1','required']) }}
+										{{ Form::label('enable1',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('otp_status','0',''  ,['id' => 'disable1','required']) }}
+										{{ Form::label('disable1',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+										<div class="radioError"></div>
+									</div>
+									
+								</div>
+								
+								<div class="form-group" id="otpDiv" style="display:none;">
+									{{ Form::label('gs_twilio_sid', (Lang::has(Session::get('admin_lang_file').'.ADMIN_TWILIO_SID')) ? trans(Session::get('admin_lang_file').'.ADMIN_TWILIO_SID') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_TWILIO_SID'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_twilio_sid','',array('class' => 'form-control','maxlength'=>'100')) }}
+									</div> <br>
+									
+									{{ Form::label('gs_twilio_token', (Lang::has(Session::get('admin_lang_file').'.ADMIN_TWILIO_TOKEN')) ? trans(Session::get('admin_lang_file').'.ADMIN_TWILIO_TOKEN') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_TWILIO_TOKEN'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_twilio_token','',array('class' => 'form-control','maxlength'=>'100')) }}
+									</div> <br>
+									
+									{{ Form::label('gs_twilio_from', (Lang::has(Session::get('admin_lang_file').'.ADMIN_TWILIO_FROM')) ? trans(Session::get('admin_lang_file').'.ADMIN_TWILIO_FROM') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_TWILIO_FROM'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_twilio_from','',array('class' => 'form-control','maxlength'=>'15','onkeypress'=>'return onlyNumbers(event);')) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_MAIL_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_MAIL_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_MAIL_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('mail_status','1','' ,['id' => 'enable2','required']) }}
+										{{ Form::label('enable2',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('mail_status','0',''  ,['id' => 'disable2','required']) }}
+										{{ Form::label('disable2',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+										<div class="radioError"></div>
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SELF_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_SELF_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SELF_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('self_status','1','' ,['id' => 'enable3','required']) }}
+										{{ Form::label('enable3',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('self_status','0',''  ,['id' => 'disable3','required']) }}
+										{{ Form::label('disable3',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+										<div class="radioError"></div>
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SHOW_INVENTORY')) ? trans(Session::get('admin_lang_file').'.ADMIN_SHOW_INVENTORY') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SHOW_INVENTORY'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_show_inventory','1','',['id' => 'yes','required']) }}
+										{{ Form::label('yes',(Lang::has(Session::get('admin_lang_file').'.ADMIN_YES')) ? trans(Session::get('admin_lang_file').'.ADMIN_YES') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_YES')) }}
+										{{ Form::radio('gs_show_inventory','0','',['id' => 'no','required']) }}
+										{{ Form::label('no',(Lang::has(Session::get('admin_lang_file').'.ADMIN_NO')) ? trans(Session::get('admin_lang_file').'.ADMIN_NO') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_NO')) }}
+										<div class="radioError"></div>
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DELIVERY_FEE_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_delivery_fee_status','1','' ,['id' => 'enable4','required']) }}
+										{{ Form::label('enable4',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_delivery_fee_status','0',''  ,['id' => 'disable4','required']) }}
+										{{ Form::label('disable4',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+										<div class="radioError"></div>
+									</div>
+								</div>
+								<div class="form-group" id="deliverFeeDiv" style="display:none">
+									{{ Form::label('dlivery_fee', (Lang::has(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DELIVERY_FEE'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_delivery_fee','',array('class' => 'form-control','maxlength'=>'10','onkeypress'=>"return onlyNumbersWithDot(event);",'placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DELIVERY_FEE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DELIVERY_FEE'))) }}
+									</div>
+									<div class="col-sm-2">
+										{!! Form::text('deli_curr',$default_currency,['readonly','class' => 'form-control'])!!}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_CART_MAIL')) ? trans(Session::get('admin_lang_file').'.ADMIN_CART_MAIL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_CART_MAIL'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_abandoned_mail','1','',['id' => 'enable','required']) }}
+										{{ Form::label('enable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_abandoned_mail','0','',['id' => 'disable','required']) }}
+										{{ Form::label('disable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+										<div class="radioError"></div>
+									</div>
+								</div>
+								<div class="form-group" id="mailDiv" style="display:none">
+									{{ Form::label('gs_mail', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SEND_MAIL_AFTER')) ? trans(Session::get('admin_lang_file').'.ADMIN_SEND_MAIL_AFTER') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SEND_MAIL_AFTER'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_mail_after','',array('class' => 'form-control','maxlength'=>'3','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_MAIL_AFTER')) ? trans(Session::get('admin_lang_file').'.ADMIN_MAIL_AFTER') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_MAIL_AFTER'),'onkeypress'=> 'return onlyNumbers(event)')) }}
+									</div>
+									<div class="col-sm-2">
+										{{ Form::text('mail_duration', __(Session::get('admin_lang_file').'.ADMIN_HOUR'),['class' => 'form-control','readonly'])}}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_INVITE_FRNDS')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVITE_FRNDS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVITE_FRNDS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_refer_friend','1','',['id' => 'enable_r','required']) }}
+										{{ Form::label('enable_r',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_refer_friend','0','',['id' => 'disable_r','required']) }}
+										{{ Form::label('disable_r',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+										<div class="radioError"></div>
+									</div>
+								</div>
+								<div class="form-group" id="referDiv" style="display:none">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT')) ? trans(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_OFFER_PERCENT'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('gs_offer_percentage','',array('class' => 'form-control','maxlength'=>'2','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT')) ? trans(Session::get('admin_lang_file').'.ADMIN_OFFER_PERCENT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_OFFER_PERCENT'),'onkeypress'=> 'return onlyNumbers(event)')) }}
+									</div>
+								</div>div class="form-group">
+								   {{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_PW_PROTECT')) ? trans(Session::get('admin_lang_file').'.ADMIN_PW_PROTECT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PW_PROTECT'),array('class'=>'control-label col-sm-2 starclass')) }}
+								   <div class="col-sm-4">
+									{{ Form::radio('gs_password_protect','1','',['id' => 'enable_pw','required']) }}
+										{{ Form::label('enable_pw',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_password_protect','0','',['id' => 'disable_pw','required']) }}
+										{{ Form::label('disable_pw',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									<a href="#" id="help-seo-title" data-placement="right" data-toggle="tooltip" title="" data-original-title="If it enable customer need to set password with one special character,one number,one lowercase letter and one uppercase letter"><span class="glyphicon glyphicon-question-sign"></span></a>
+								   </div>
+								</div>
+								<?php /*
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_PW_PROTECT')) ? trans(Session::get('admin_lang_file').'.ADMIN_PW_PROTECT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PW_PROTECT'),array('class'=>'control-label col-sm-2 starclass')) }}&nbsp;<i class="fa fa-info-circle tooltip-demo" title="If it enable customer need to set password with one special character and one number" style="float:left;padding:10px 0 0 0px;"></i>
+									<div class="col-sm-6">
+										{{ Form::radio('gs_password_protect','1','',['id' => 'enable_pw','required']) }}
+										{{ Form::label('enable_pw',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_password_protect','0','',['id' => 'disable_pw','required']) }}
+										{{ Form::label('disable_pw',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div> */ ?>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_SH_CAPTCHA')) ? trans(Session::get('admin_lang_file').'.ADMIN_SH_CAPTCHA') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SH_CAPTCHA'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_show_captcha','1','',['id' => 'enable_sc','required']) }}
+										{{ Form::label('enable_sc',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_show_captcha','0','',['id' => 'disable_sc','required']) }}
+										{{ Form::label('disable_sc',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_HIPPO_CHAT_STATUS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('gs_hippo_chat_status','1','',['id' => 'enable5','required']) }}
+										{{ Form::label('enable5',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('gs_hippo_chat_status','0','',['id' => 'disable5','required']) }}
+										{{ Form::label('disable5',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+										<div class="radioError"></div>
+									</div>
+								</div>
+								<div class="form-group" id="hippochatDiv" style="display:none;">
+									{{ Form::label('gs_hippo_secret_key', (Lang::has(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY')) ? trans(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_HIPPO_CHAT_SECRET_KEY'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('gs_hippo_secret_key',"",array('class' => 'form-control','maxlength'=>'100','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY')) ? trans(Session::get('admin_lang_file').'.ADMIN_HIPPO_CHAT_SECRET_KEY') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_HIPPO_CHAT_SECRET_KEY'))) }}
+									</div>
+									
+								</div>
+								<!-- INVALID LOGIN ATTMEPTS -->
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_SUSPEND')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_SUSPEND') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVALID_LOGIN_SUSPEND'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::radio('suspend_status','1','',['id' => 'suspend_enable','required']) }}
+										{{ Form::label('suspend_enable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENABLE')) }}
+										{{ Form::radio('suspend_status','0','checked',['id' => 'suspend_disable','required']) }}
+										{{ Form::label('suspend_disable',(Lang::has(Session::get('admin_lang_file').'.ADMIN_DISABLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_DISABLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_DISABLE')) }}
+									</div>
+								</div>
+								<div id="suspendStatusDiv" style=" display:none ">
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVALID_LOGIN_ATTEMPTS'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-6">
+										{{ Form::text('max_attempt','',array('class' => 'form-control','maxlength'=>'2','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS')) ? trans(Session::get('admin_lang_file').'.ADMIN_INVALID_LOGIN_ATTEMPTS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_INVALID_LOGIN_ATTEMPTS'),'onkeypress'=>'return onlyNumbers(event)')) }}
+									</div>
+								</div>
+
+								<div class="form-group">
+									{{ Form::label('','Commission Settings',array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+									   <input class="form-control" maxlength="5" placeholder="commission(%)" name="commissionpercentage" type="text">
+									</div>
+								</div>
+
+								<div class="form-group">
+									{{ Form::label('', (Lang::has(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME')) ? trans(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_LOGIN_SUSPEND_TIME'),array('class'=>'control-label col-sm-2 starclass')) }}
+									<div class="col-sm-4">
+										{{ Form::text('suspend_time','',array('class' => 'form-control','maxlength'=>'2','placeholder'=>(Lang::has(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME')) ? trans(Session::get('admin_lang_file').'.ADMIN_LOGIN_SUSPEND_TIME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_LOGIN_SUSPEND_TIME'),'onkeypress'=>'return onlyNumbers(event)')) }}
+									</div>
+									<div class="col-sm-2">
+										{{ Form::select('suspend_duration',['minutes' => 'Minutes','hours' => 'Hours'],'minutes',['class' => 'form-control'])}}
+									</div>
+								</div>
+								</div>
+								<div class="panel-heading col-md-offset-2">
+									{{ Form::submit('Submit',array('class'=>'btn btn-success')) }}
+								</div>
+								{{ Form::close() }}
+								
+								
+								
+							</div>
+							@endif
+						</div>
+						<!-- END INPUTS -->
+						
+						
+					</div>
+				</div>
+				
+			</div>
+			
+			
+		</div>
+	</div>
+	<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+@section('script')
+<script type="text/javascript">
+	$("#general_settings_form").validate({
+		//onkeyup: true,
+		onfocusout: function (element) {
+			this.element(element);
+		},
+		rules: {
+			sitename: "required",
+			site_banner_text: "required",
+			description: "required",
+			email: {
+				required: true,
+				email: true
+			},
+			metatitle: "required",
+			phone: "required",
+			metakeywords: "required",
+			metadescription: "required",
+			footertext: "required",
+			otp_status: "required",
+			mail_status: "required",
+			self_status: "required",
+			itunes_url: {
+				required: true,
+				url: true
+			},
+			playstore_url: {
+				required: true,
+				url: true
+			},
+			gs_delivery_fee_status:"required",
+			gs_refer_friend:"required",
+			gs_abandoned_mail:"required",
+			gs_show_inventory:"required",
+			gs_show_captcha:"required",
+			gs_password_protect:"required",
+			"gs_delivery_fee": {
+				required: {
+					depends: function(element) {
+						if($('input[name=gs_delivery_fee_status]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			"gs_offer_percentage": {
+				required: {
+					depends: function(element) {
+						if($('input[name=gs_refer_friend]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			gs_abandoned_mail:"required",
+			"gs_mail_after": {
+				required: {
+					depends: function(element) {
+						if($('input[name=gs_abandoned_mail]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			"gs_hippo_secret_key": {
+				required: {
+					depends: function(element) {
+						if($('input[name=gs_hippo_chat_status]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			
+			"gs_twilio_sid": {
+				required: {
+					depends: function(element) {
+						if($('input[name=otp_status]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			"gs_twilio_token": {
+				required: {
+					depends: function(element) {
+						if($('input[name=otp_status]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			"gs_twilio_from": {
+				required: {
+					depends: function(element) {
+						if($('input[name=otp_status]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			"max_attempt": {
+				required: {
+					depends: function(element) {
+						if($('input[name=suspend_status]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			"suspend_time": {
+				required: {
+					depends: function(element) {
+						if($('input[name=suspend_status]:checked').val()=='1'){ return true; } else { return false; } 
+					}
+				}
+			},
+			
+		},
+		messages: {
+			sitename: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_SITE_NAME')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_SITE_NAME') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_SITE_NAME')}}",
+			site_banner_text: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_EN_SITE_BANNER_TEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_EN_SITE_BANNER_TEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_EN_SITE_BANNER_TEXT')}}",
+			description: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_SITE_DESCRIPTION')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_SITE_DESCRIPTION') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_SITE_DESCRIPTION')}}",
+			email: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTER_EMAIL')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTER_EMAIL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTER_EMAIL')}}",
+			phone: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTER_PHONE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTER_PHONE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTER_PHONE')}}",
+			metatitle: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_METATITLE')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_METATITLE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_METATITLE')}}",
+			metakeywords: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_METAKEYWORDS')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_METAKEYWORDS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_METAKEYWORDS')}}",
+			metadescription: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_METADESC')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_METADESC') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_METADESC')}}",
+			footertext: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_FOOTERTEXT')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_FOOTERTEXT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_FOOTERTEXT')}}",
+			itunes_url: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_ITUNES_URL')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_ITUNES_URL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_ITUNES_URL')}}",
+			playstore_url: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_PLAYSTORE_URL')) ? trans(Session::get('admin_lang_file').'.ADMIN_PLEASE_ENTER_PLAYSTORE_URL') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_PLEASE_ENTER_PLAYSTORE_URL')}}",
+			gs_delivery_fee_status: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTER_DELIFEE')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTER_DELIFEE') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTER_DELIFEE')}}",
+			gs_delivery_fee: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_SELECT_DELIFEE_STATUS')) ? trans(Session::get('admin_lang_file').'.ADMIN_SELECT_DELIFEE_STATUS') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SELECT_DELIFEE_STATUS')}}",
+			gs_hippo_secret_key: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTER_HIPPO_SECRET_KEY')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTER_HIPPO_SECRET_KEY') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTER_HIPPO_SECRET_KEY')}}",
+			gs_twilio_sid: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTER_TWILIO_ID')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTER_TWILIO_ID') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTER_TWILIO_ID')}}",
+			gs_twilio_token: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTER_TWILIO_ID')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTER_TWILIO_ID') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTER_TWILIO_ID')}}",
+			gs_twilio_from: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTER_TWILIO_FROM')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTER_TWILIO_FROM') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTER_TWILIO_FROM')}}",
+			gs_refer_friend: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_SELECT_REFER_FRND')) ? trans(Session::get('admin_lang_file').'.ADMIN_SELECT_REFER_FRND') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_SELECT_REFER_FRND')}}",
+			gs_offer_percentage: "{{(Lang::has(Session::get('admin_lang_file').'.ADMIN_ENTR_OFFER_PERCENT')) ? trans(Session::get('admin_lang_file').'.ADMIN_ENTR_OFFER_PERCENT') : trans($ADMIN_OUR_LANGUAGE.'.ADMIN_ENTR_OFFER_PERCENT')}}",
+			gs_password_protect: "@lang(Session::get('admin_lang_file').'.ADMIN_SL_PW_ST')",
+			gs_show_captcha: "@lang(Session::get('admin_lang_file').'.ADMIN_SL_CAPTCHA_ST')",
+			suspend_time: "@lang(Session::get('admin_lang_file').'.ADMIN_EN_LOGIN_SUSPEND_TIME')",
+			max_attempt: "@lang(Session::get('admin_lang_file').'.ADMIN_LOGIN_ATTEMPT')",
+			
+		},
+		errorPlacement: function(error, element) 
+		{
+			if ( element.is(":radio") ) 
+			{
+				//alert($(element).next().next().next().next().html());
+				error.appendTo( $(element).next().next().next().next());
+				//<div class="form-group"><label class="control-label col-sm-2"></label><div class="col-sm-6 pre_order_label">test</div></div>
+				//error.insertAfter($(element).parents('div').prev($('.pre_order_label')));
+			}
+			else 
+			{ // This is the default behavior 
+				error.insertAfter( element );
+			}
+		}
+	});
+	
+	function onlyNumbersWithDot(e) {           
+		var charCode;
+		if (e.keyCode > 0) {
+			charCode = e.which || e.keyCode;
+		}
+		else if (typeof (e.charCode) != "undefined") {
+			charCode = e.which || e.keyCode;
+		}
+		if (charCode == 46)
+		return true
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+		return false;
+		return true;
+	}
+	
+	function onlyNumbers(evt) {
+		var e = event || evt; // for trans-browser compatibility
+		var charCode = e.which || e.keyCode;
+		
+		if (charCode > 31 && (charCode < 42 || charCode > 57))
+		return false;
+		return true;
+	}
+	
+	$('input[name=gs_delivery_fee_status]').change(function(){
+		var value = $( 'input[name=gs_delivery_fee_status]:checked' ).val();
+		if(value=='1')
+		{
+			$('#deliverFeeDiv').slideDown();
+		}
+		else
+		{
+			$('#deliverFeeDiv').slideUp();
+		}
+	});
+	
+	$('input[name=gs_abandoned_mail]').change(function(){
+		var value = $( 'input[name=gs_abandoned_mail]:checked' ).val();
+		if(value=='1')
+		{
+			$('#mailDiv').slideDown();
+		}
+		else
+		{
+			$('#mailDiv').slideUp();
+		}
+	});
+	
+	$('input[name=gs_refer_friend]').change(function(){
+		var value = $( 'input[name=gs_refer_friend]:checked' ).val();
+		if(value=='1')
+		{
+			$('#referDiv').slideDown();
+		}
+		else
+		{
+			$('#referDiv').slideUp();
+		}
+	});
+	
+	$('input[name=gs_hippo_chat_status]').change(function(){
+		var value = $( 'input[name=gs_hippo_chat_status]:checked' ).val();
+		if(value=='1')
+		{
+			$('#hippochatDiv').slideDown();
+		}
+		else
+		{
+			$('#hippochatDiv').slideUp();
+		}
+	});
+	
+	$('input[name=suspend_status]').change(function(){
+		var value = $( 'input[name=suspend_status]:checked' ).val();
+		if(value=='1')
+		{
+			$('#suspendStatusDiv').slideDown();
+		}
+		else
+		{
+			$('#suspendStatusDiv').slideUp();
+		}
+	});
+	
+	$('input[name=otp_status]').change(function(){
+		var value = $( 'input[name=otp_status]:checked' ).val();
+		if(value=='1')
+		{
+			$('#otpDiv').slideDown();
+		}
+		else
+		{
+			$('#otpDiv').slideUp();
+		}
+	});
+</script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+@endsection
+@stop

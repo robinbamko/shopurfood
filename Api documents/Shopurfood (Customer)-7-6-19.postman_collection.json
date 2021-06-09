@@ -1,0 +1,3404 @@
+{
+	"info": {
+		"_postman_id": "9d5afe61-640d-44d9-8cad-b609ac69cb7f",
+		"name": "Shopurfood (Customer)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer-Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"lang\":\"en\",\n  \"cus_fname\":\"refer2 Mailinator\",\n  \"cus_email\":\"refermail3@mailinator.com\",\n  \"cus_password\":\"123456\",\n  \"cus_phone1\":\"+917373857685\",\n  \"referral_code\" :\"\",\n  \t\"andr_fcm_id\" : \"cHkxwVBQkGw:APA91bG8N8J1xteGbFX4mc-HNKAP-HW0XHa7QatEE2bozfJ6vF-o8mhdN4rUHnH1s7yILH3b9m1uwC_-7yNEGB2FKfJC_3hpeN9AgmNzB0-NsGe64I0L7zbOEQmI8RE37B6uJO7oqY__\",\n\t\"andr_device_id\" :\"9faed0bb9f714a561\",\n\t\"ios_fcm_id\" :\"\",\n\t\"ios_device_id\" :\"\",\n \"type\" : \"android\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/registration",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer-Registration-With-OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"lang\":\"en\",\n  \"cus_fname\":\"suganya mailinator\",\n  \"cus_email\":\"sugnayaaa.t@mailinator.com\",\n  \"cus_password\":\"123456\",\n  \"cus_phone1\":\"+917373857689\",\n  \"otp\":\"875471\",\n  \"current_otp\":\"875471\",\n  \"referral_code\":\"\",\n  \"andr_fcm_id\" : \"\",\n  \"ios_fcm_id\" :\"\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/customer_otp",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Country list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://mobileappshopurfood.mytaxisoft.com/api/country_list",
+					"protocol": "http",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"country_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer-Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"andr_device_id\":\"dHgz6EU1mCo\",\"andr_fcm_id\":\"APA91bEr62ePb94F0_XAM4du04_tBrUY4ePgVyDwFDUFpRBZnKm4howWeRntoOTobhy-g8v7nSYTIvuLzIP-pXpE86jjqamTsCdZiKmo6mmkKDDDOgr6-Y2D1jVhfF15ag9u_fmk01i8\",\"cus_password\":\"123456\",\"lang\":\"en\",\"login_id\":\"suganya.t@pofitec.com\",\"type\":\"android\"}"
+				},
+				"url": {
+					"raw": "https://youreats.co.uk/api/user_login",
+					"protocol": "https",
+					"host": [
+						"youreats",
+						"co",
+						"uk"
+					],
+					"path": [
+						"api",
+						"user_login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Forgot_password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cus_email\":\"suganya.t@pofitec.com\",\n   \"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer_forgot_password",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer_forgot_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Facebook_login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Suganya\",\r\n\"email\":\"suganya.t@pofitec.com\",\r\n\"facebook_id\":\"12345678912345672311\",\r\n\"lang\" : \"en\",\r\n\t\"andr_fcm_id\" : \"APA91bEr62ePb94F0_XAM4du04_tBrUY4ePgVyDwFDUFpRBZnKm4howWeRntoOTobhy-g8v7nSYTIvuLzIP-pXpE86jjqamTsCdZiKmo6mmkKDDDOgr6-Y2D1jVhfF15ag9u_fmk01i8\",\r\n\t\"andr_device_id\" :\"dHgz6EU1mCo\",\r\n\t\"ios_fcm_id\" :\"\",\r\n\t\"ios_device_id\" :\"\",\r\n\"type\" :\"\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/facebook_login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"facebook_login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Google_login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Suganya\",\r\n\"email\":\"suganya.t@pofitec.com\",\r\n\"google_id\":\"12345678912345672311\",\r\n\"lang\" : \"en\",\r\n\t\"andr_fcm_id\" : \"APA91bEr62ePb94F0_XAM4du04_tBrUY4ePgVyDwFDUFpRBZnKm4howWeRntoOTobhy-g8v7nSYTIvuLzIP-pXpE86jjqamTsCdZiKmo6mmkKDDDOgr6-Y2D1jVhfF15ag9u_fmk01i8\",\r\n\t\"andr_device_id\" :\"dHgz6EU1mCo\",\r\n\t\"ios_fcm_id\" :\"\",\r\n\t\"ios_device_id\" :\"\",\r\n\"type\" :\"android\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/google_login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"google_login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MDU3MzY4NSwiZXhwIjoxNTUwNTc3Mjg1LCJuYmYiOjE1NTA1NzM2ODUsImp0aSI6IkZwUzZzU0lWTHZKOHdmY0QiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.X5jppaVwqOsDY2qDGdXTYNgqF1PFG-s73Pql-12HFNM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\": \"en\",\n\"type\" :\"ios\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/customer_home_page",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer_home_page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Landing page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbW9iaWxlYXBwZWRpc29uLm15dGF4aXNvZnQuY29tXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDg0MjA0MjUsImV4cCI6MTU0ODQyNDAyNSwibmJmIjoxNTQ4NDIwNDI1LCJqdGkiOiJOUnMxRzVZYjVEQzh3akdWIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Q9Gz1KGLhYwbl9vOETHfnsD4YLN8_kCUvkj3xYZk_xw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/landing_page",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"landing_page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grocery home page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDc4MDY0OTUsImV4cCI6MTU0NzgxMDA5NSwibmJmIjoxNTQ3ODA2NDk1LCJqdGkiOiJwN2h4VktKUzMxVU5xVmlkIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.WYVBScnlVQhAg1cLrTq1L_-ppe-05gdUOswTv2uwbto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"user_latitude\":\"11.016010\",\n\"user_longitude\" : \"76.970310\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/grocery_home_page",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"grocery_home_page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurant home page",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RlbW8uc2hvcHVyZm9vZC5jb20vYXBpL3VzZXJfbG9naW4iLCJpYXQiOjE1NTYxODg4NzQsIm5iZiI6MTU1NjE4ODg3NCwianRpIjoiTEJmVEgyMnVZUDJuRGtOMyIsInN1YiI6NCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.PoBkYWFJ1ioC3nwKZiPJ42GHMKjP9LD5QJzD1x57NhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"user_latitude\":\"53.7613383\",\n\"user_longitude\" : \"-2.7073841999999786\",\n\"user_location\" :\"Coimbatore,Tamil nadu,India\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/restaurant_home_page",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"restaurant_home_page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All grocery lists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDc4MDY0OTUsImV4cCI6MTU0NzgxMDA5NSwibmJmIjoxNTQ3ODA2NDk1LCJqdGkiOiJwN2h4VktKUzMxVU5xVmlkIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.WYVBScnlVQhAg1cLrTq1L_-ppe-05gdUOswTv2uwbto",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user_latitude\":\"11.016010\",\r\n\"user_longitude\" : \"76.970310\",\r\n\"lang\":\"en\",\r\n\"page\"\t: \"1\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/all_grocery_list",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"all_grocery_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category based Grocery",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDg4MzMxMzksImV4cCI6MTU0ODgzNjczOSwibmJmIjoxNTQ4ODMzMTM5LCJqdGkiOiJvbkZhUWRna1hzd094TnY5Iiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.INx_b_KOJrP-fJb-AGw6qUEuJ38p6RpRUU2meXkMpjM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"user_latitude\":\"11.016010\",\n\"user_longitude\" : \"76.970310\",\n\"lang\":\"en\",\n\"page\" : \"1\",\n\"category_id\" : \"2\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/category_based_grocery",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"category_based_grocery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All restaurant list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1Mzg2NDExMCwibmJmIjoxNTUzODY0MTEwLCJqdGkiOiJYTEpSTTJnZkVxVU9uMUxzIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.GnaCudJHWZuwuGByfJvhJd-xKaNxQ0wkIBIOz5Sy8uA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user_latitude\":\"11.0168445\",\r\n\"user_longitude\" : \"76.95583209999995\",\r\n\"lang\":\"en\",\r\n\"page\"\t: \"2\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/all_restaurant_list",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"all_restaurant_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category  Based Restaurant",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1Mzg2NDExMCwibmJmIjoxNTUzODY0MTEwLCJqdGkiOiJYTEpSTTJnZkVxVU9uMUxzIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.GnaCudJHWZuwuGByfJvhJd-xKaNxQ0wkIBIOz5Sy8uA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"user_latitude\":\"11.016010\",\n\"user_longitude\" : \"76.970310\",\n\"lang\":\"en\",\n\"page\" : \"1\",\n\"category_id\" : \"119\",\n\"search_halal\" :\"\",\n\"orderBy_delivery\" :\"\",\n\"orderBy_rating\" :\"\",\n\"orderBy_offers\" :\"\",\n\"restaurant_type\" :[1,2],\n\"prefer_time\" :[1]\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/category_based_restaurant",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"category_based_restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Grocery Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDg4MzMxMzksImV4cCI6MTU0ODgzNjczOSwibmJmIjoxNTQ4ODMzMTM5LCJqdGkiOiJvbkZhUWRna1hzd094TnY5Iiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.INx_b_KOJrP-fJb-AGw6qUEuJ38p6RpRUU2meXkMpjM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"lang\" : \"en\",\n\"store_id\" : \"3\",\n\"review_page_no\" : \"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/grocery_details",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"grocery_details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurant Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1NDM1Mzk2OSwibmJmIjoxNTU0MzUzOTY5LCJqdGkiOiJDRjdWUFV2aWtUOUdleUdpIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.AgaQ2F4JdznEGKc-A7jxNju5D8ttAzSOIJijrasRzRQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"restaurant_id\" : \"3\",\n\"review_page_no\" : \"1\",\n\"lang\" : \"en\",\n\"search_text\" :\"Sandwich burger\",\n\"sort_by\" :\"\",\n\"item_type\" :\"\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/restaurant_details",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"restaurant_details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category Based Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9tb2JpbGVhcHBlZGlzb24ubXl0YXhpc29mdC5jb21cL2FwaVwvdXNlcl9sb2dpbiIsImlhdCI6MTU0ODkyOTk3MSwiZXhwIjoxNTQ4OTMzNTcxLCJuYmYiOjE1NDg5Mjk5NzEsImp0aSI6IkQ1Q3FzdThVM3pZQkxheEMiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.HbOGXKLwHjybKjwkslB5KY8hpfI1a5aDJHkWzJXVgrY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"lang\": \"en\",\r\n\"store_id\":\"1\",\r\n\"main_category_id\":\"1\",\r\n\"sub_category_id\" : \"2\",\r\n\"sort_by\" : \"\",\r\n\"search_text\" : \"\",\r\n\"page_no\" : \"1\"\r\n}"
+				},
+				"url": {
+					"raw": "http://mobileappedison.mytaxisoft.com/api/customer/category_based_products",
+					"protocol": "http",
+					"host": [
+						"mobileappedison",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"category_based_products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category based items",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1NDI2OTg3OSwibmJmIjoxNTU0MjY5ODc5LCJqdGkiOiI4WXFyTEdRRG9RYmV6N3NzIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.dMFNespCN3cgh4iNpJbbZHsF2aNrpbGdREqn36fI4ZU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"lang\": \"en\",\r\n\"restaurant_id\":\"3\",\r\n\"main_category_id\":\"2\",\r\n\"sub_category_id\" : \"1\",\r\n\"sort_by\" : \"\",\r\n\"search_text\" : \"\",\r\n\"item_type\" :\"\",\r\n\"page_no\" : \"1\",\r\n\"all\" :\"0\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/category_based_items",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"category_based_items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Choice List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyOTQwNTIsImV4cCI6MTU0NzI5NzY1MiwibmJmIjoxNTQ3Mjk0MDUyLCJqdGkiOiJLeWNtNnJZUnZNdlVMSlQ1Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0._dji36-vcQ4jmtoOt8xR_uoACRiE4GjeU1N2Wuk2Gw8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"item_id\" :\"2\",\n\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/choice_list",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"choice_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDg4NDE3MDYsImV4cCI6MTU0ODg0NTMwNiwibmJmIjoxNTQ4ODQxNzA2LCJqdGkiOiJvUmpKTlc4U2JyVTllaG92Iiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.matdUpdkRUADhYKMIqjCJ0339xvoW-EYgBo3cJmYUGQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"product_id\" : \"7\",\n\"review_page_no\" : \"1\",\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/product_details",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"product_details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Item detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1Mzg2NDExMCwibmJmIjoxNTUzODY0MTEwLCJqdGkiOiJYTEpSTTJnZkVxVU9uMUxzIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.GnaCudJHWZuwuGByfJvhJd-xKaNxQ0wkIBIOz5Sy8uA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"item_id\" : \"7\",\n\"review_page_no\" : \"1\",\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/item_details",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"item_details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_Delete_Wishlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODkyMDgsImV4cCI6MTU0NzI5MjgwOCwibmJmIjoxNTQ3Mjg5MjA4LCJqdGkiOiI0OE5qS2V3TVIxcVIzeWZmIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SdnYZmVJb4y_f5ct0Ict3mlZQKAjS6vuoHROk2zTC04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"product_id\" : \"1\",\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/add_to_wishlist",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"add_to_wishlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add / Update Cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2RxYS5teXRheGlzb2Z0LmNvbS9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MTQzNDg2MywiZXhwIjoxNTUxNDM4NDYzLCJuYmYiOjE1NTE0MzQ4NjMsImp0aSI6ImR3SHRWWEU0NUt6ekJXM0UiLCJzdWIiOjUsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.EG0NW-6oDDZPYlBL_lfGS9pFoEq5B_bXe7xXux8RBLM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"item_id\":\"4\",\r\n\"st_id\":\"4\",\r\n\"quantity\":\"2\",\r\n\"lang\":\"en\",\r\n\"choices_id\":[1],\r\n\"special_notes\" : \"Extra spicy\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://shopurfoodqa.mytaxisoft.com/api/customer/add_to_cart",
+					"protocol": "https",
+					"host": [
+						"shopurfoodqa",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"add_to_cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update quantity in cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU0OTQzNzAwMSwiZXhwIjoxNTQ5NDQwNjAxLCJuYmYiOjE1NDk0MzcwMDEsImp0aSI6Ildqd3hFa2lOdVVWeExySVIiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.FcmyM1e614adIsx6l5GZ5MlEDMki9qp4K6Pk1rQ6b3o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" : \"en\",\n\"cart_id\" :\"293\",\n\"quantity\" : \"2\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/qty_update_cart",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"qty_update_cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add choice in cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1Mzg2NDExMCwibmJmIjoxNTUzODY0MTEwLCJqdGkiOiJYTEpSTTJnZkVxVU9uMUxzIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.GnaCudJHWZuwuGByfJvhJd-xKaNxQ0wkIBIOz5Sy8uA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"cart_id\" : \"1\",\r\n\"product_id\" :\"14\",\r\n\"choice_id\" : [2],\r\n\"lang\"\t: \"en\",\r\n\"special_request\":\"Extra cheese\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/add_choice_toCart",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"add_choice_toCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "my_cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RlbW8uc2hvcHVyZm9vZC5jb20vYXBpL2dvb2dsZV9sb2dpbiIsImlhdCI6MTU1NjI3ODcwMCwibmJmIjoxNTU2Mjc4NzAwLCJqdGkiOiJGMzRlcTN5YUZCUE5XdTZWIiwic3ViIjoxNSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.U8fvQtR5eagVafMmJcthpXgSUnsM5IBI1ZRvmBFRRss",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "https://demo.shopurfood.com/api/customer/my_cart",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"shopurfood",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"my_cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove_from_cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDc4MTAzMTIsImV4cCI6MTU0NzgxMzkxMiwibmJmIjoxNTQ3ODEwMzEyLCJqdGkiOiJ1YnRBOTJ1aHR3S01UcUNJIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.6q0Sf5Z0iuIyPkQ_ErACbdnzpQUzCmhKAlR0_8BHYew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"cart_id\":\"12\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/remove_from_cart",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"remove_from_cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add / update pre order date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL3VzZXJfbG9naW4iLCJpYXQiOjE1NTE4NTY4MjcsImV4cCI6MTU1MTg2MDQyNywibmJmIjoxNTUxODU2ODI3LCJqdGkiOiJQMWw5aVRWeWVGcDRISzBFIiwic3ViIjo2MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.3k6IjirgFyVmLfv5By5hfHHXJ7vyrfKWZVdTl5F-oyo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\" : \"en\",\n\t\"store_id\" : \"89\",\n\t\"pre_order_date\" : \"2019-03-06 18:00\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/customer/add_pre_order_date",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"add_pre_order_date"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Choice from cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU0OTQzMzIyNSwiZXhwIjoxNTQ5NDM2ODI1LCJuYmYiOjE1NDk0MzMyMjUsImp0aSI6Im5mY0tlUDR6U0poZ3NjVW8iLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.9klBT9QQLmr3tR5hxhcCilskwdAo4CSTysueYfMabkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"cart_id\" : \"293\",\r\n\"product_id\" :\"3238\",\r\n\"choice_id\" : [8],\r\n\"lang\"\t: \"en\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/remove_choice",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"remove_choice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove pre order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODUzMzMsImV4cCI6MTU0NzI4ODkzMywibmJmIjoxNTQ3Mjg1MzMzLCJqdGkiOiJFa1hKMTI5eGx2YlhWbDQ4Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.2geg-ME0NhG7Xnt8SvsX8AdPilUtkX5qSEBUs7FiMRQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\" : \"en\",\n\t\"store_id\" : \"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/remove_pre_order",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"remove_pre_order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment methods",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDc4MTAzMTIsImV4cCI6MTU0NzgxMzkxMiwibmJmIjoxNTQ3ODEwMzEyLCJqdGkiOiJ1YnRBOTJ1aHR3S01UcUNJIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.6q0Sf5Z0iuIyPkQ_ErACbdnzpQUzCmhKAlR0_8BHYew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/payment_methods",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"payment_methods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Use Wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MzgzNzE5MiwibmJmIjoxNTUzODM3MTkyLCJqdGkiOiJ2bU1qRktmbTVQZlU4QnZUIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.OAPrBhHoOYvGwZnmoK24fO5a4mwojs7tyZXHidSKryc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\",\n\t\"ord_self_pickup\"  :\"1\",\n\t\"use_wallet\" :\"0\",\n\t\"wallet_amt\":\"0.00\",\n\t\"delivery_fee\" :\"0.00\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/use_wallet",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"use_wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COD Checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1NTA2ODc5MSwibmJmIjoxNTU1MDY4NzkxLCJqdGkiOiJaMDRrbzA3VENrTUxLOVdzIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.fkpvG1uLRq7cwIinehOE7oKlq19vfYeNoBgzQp2uNuY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"lang\":\"en\",\r\n\"ord_self_pickup\":\"0\",\r\n\"cus_name\":\"suganya\",\r\n\"cus_last_name\":\"t\",\r\n\"cus_email\":\"suganya.t@mailinator.com\",\r\n\"cus_phone1\":\"+917373857689\",\r\n\"cus_phone2\":\"+917373857689\",\r\n\"cus_address\":\"Coimbatore,tamil nadu,india\",\r\n\"cus_address1\" :\"2nd floor,ram nagar\",\r\n\"cus_lat\":\"11.23456\",\r\n\"cus_long\":\"76.32467\",\r\n\"use_wallet\":\"1\",\r\n\"wallet_amt\":\"20.00\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/cod_checkout",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"cod_checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paypal checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDY2MDcwOTEsImV4cCI6MTU0NjYxMDY5MSwibmJmIjoxNTQ2NjA3MDkxLCJqdGkiOiJYWXRyeVpoSktRM090WTFsIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.8ph5HfPjw6Rg_gawBMqP4cwtcu5vO_kqNtB8sJ8Dekg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"lang\":\"en\",\r\n\"ord_self_pickup\":\"0\",\r\n\"cus_name\":\"suganya\",\r\n\"cus_last_name\":\"t\",\r\n\"cus_email\":\"suganya.t@pofitec.com\",\r\n\"cus_phone1\":\"+917373857689\",\r\n\"cus_phone2\":\"+917373857689\",\r\n\"cus_address\":\"Coimbatore,tamil nadu,india\",\r\n\"cus_address1\" :\"2nd floor,ram nagar\",\r\n\"cus_lat\":\"11.23456\",\r\n\"cus_long\":\"76.32467\",\r\n\"use_wallet\":\"1\",\r\n\"wallet_amount\":\"3216545444\",\r\n\"transaction_id\" : \"trans -545436\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/paypal_checkout",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"paypal_checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stripe checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDY5NDU1OTQsImV4cCI6MTU0Njk0OTE5NCwibmJmIjoxNTQ2OTQ1NTk0LCJqdGkiOiJSbnlIb3JmbktpaGJoRXNnIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.uOR1lkH2CwKkmmSQEYBGYFL4tb-nuaH4PoNZv5nlJH0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"lang\":\"en\",\r\n\"ord_self_pickup\":\"0\",\r\n\"cus_name\":\"suganya\",\r\n\"cus_last_name\":\"t\",\r\n\"cus_email\":\"suganya.t@pofitec.com\",\r\n\"cus_phone1\":\"+917373857689\",\r\n\"cus_phone2\":\"+917373857689\",\r\n\"cus_address\":\"Coimbatore,tamil nadu,india\",\r\n\"cus_address1\" :\"2nd floor,ram nagar\",\r\n\"cus_lat\":\"11.23456\",\r\n\"cus_long\":\"76.32467\",\r\n\"use_wallet\":\"1\",\r\n\"wallet_amt\":\"100.00\",\r\n\"card_no\":\"42424242424242\",\r\n\"ccExpiryMonth\" :\"12\",\r\n\"ccExpiryYear\" :\"2019\",\r\n\"cvvNumber\" :\"123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/stripe_checkout",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"stripe_checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wallet checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDc4MTAzMTIsImV4cCI6MTU0NzgxMzkxMiwibmJmIjoxNTQ3ODEwMzEyLCJqdGkiOiJ1YnRBOTJ1aHR3S01UcUNJIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.6q0Sf5Z0iuIyPkQ_ErACbdnzpQUzCmhKAlR0_8BHYew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "ord_self_pickup",
+							"value": "0",
+							"description": "0 - normal order, 1 - self-pickup",
+							"type": "text"
+						},
+						{
+							"key": "cus_name",
+							"value": "nagoor",
+							"type": "text"
+						},
+						{
+							"key": "cus_last_name",
+							"value": "mailinator",
+							"type": "text"
+						},
+						{
+							"key": "cus_email",
+							"value": "nagoor@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "cus_phone1",
+							"value": "+917373857689",
+							"type": "text"
+						},
+						{
+							"key": "cus_phone2",
+							"value": "+917373857689",
+							"type": "text"
+						},
+						{
+							"key": "cus_address",
+							"value": "Coimbatore,tamil nadu,india",
+							"type": "text"
+						},
+						{
+							"key": "cus_address1",
+							"value": "2nd floor,ram nagar",
+							"type": "text"
+						},
+						{
+							"key": "cus_lat",
+							"value": "11.23456",
+							"type": "text"
+						},
+						{
+							"key": "cus_long",
+							"value": "76.32467",
+							"type": "text"
+						},
+						{
+							"key": "use_wallet",
+							"value": "1",
+							"description": "0 - wallet is not used, 1- wallet is used",
+							"type": "text"
+						},
+						{
+							"key": "wallet_amt",
+							"value": "60",
+							"description": "If wallet is used , then wallet_amount field is mandatory",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/wallet_checkout",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"wallet_checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_my_account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbW9iaWxlYXBwZWRpc29uLm15dGF4aXNvZnQuY29tXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDg0MDgyMDQsImV4cCI6MTU0ODQxMTgwNCwibmJmIjoxNTQ4NDA4MjA0LCJqdGkiOiJKS1NVSGliTkR4dFpVcjFKIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Rb7ZMWJf0c2uKNfMXEW_5QZQgGl8a2zSIwmLZ1Y4a40",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/customer_my_account",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"customer_my_account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_update_account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MjEyNjAzMywiZXhwIjoxNTUyMTI5NjMzLCJuYmYiOjE1NTIxMjYwMzMsImp0aSI6IlpUSFNZV3BJVVZ5MGptQlIiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.-YzIu-ITq3nu5oAxrGswF7S3R-y4C5cmYKNe6iLpN4Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cus_name",
+							"value": "suganya",
+							"type": "text"
+						},
+						{
+							"key": "cus_email",
+							"value": "suganya.t@pofitec.com",
+							"type": "text"
+						},
+						{
+							"key": "cus_phone1",
+							"value": "+919092398760",
+							"type": "text"
+						},
+						{
+							"key": "cus_phone2",
+							"value": "+919092398761",
+							"type": "text"
+						},
+						{
+							"key": "cus_address",
+							"value": "Coimbatore, Tamil Nadu 641012, India",
+							"type": "text"
+						},
+						{
+							"key": "cus_lat",
+							"value": "11.0168445",
+							"type": "text"
+						},
+						{
+							"key": "cus_long",
+							"value": "76.95583209999995",
+							"type": "text"
+						},
+						{
+							"key": "cus_image",
+							"type": "file",
+							"src": ""
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_update_account",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_update_account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_update_account_with_otp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MjEyNjAzMywiZXhwIjoxNTUyMTI5NjMzLCJuYmYiOjE1NTIxMjYwMzMsImp0aSI6IlpUSFNZV3BJVVZ5MGptQlIiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.-YzIu-ITq3nu5oAxrGswF7S3R-y4C5cmYKNe6iLpN4Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cus_name",
+							"value": "suganya",
+							"type": "text"
+						},
+						{
+							"key": "cus_email",
+							"value": "suganya.t@pofitec.com",
+							"type": "text"
+						},
+						{
+							"key": "cus_phone1",
+							"value": "+919092398760",
+							"type": "text"
+						},
+						{
+							"key": "cus_phone2",
+							"value": "+919092398761",
+							"type": "text"
+						},
+						{
+							"key": "cus_address",
+							"value": "Coimbatore, Tamil Nadu 641012, India",
+							"type": "text"
+						},
+						{
+							"key": "cus_lat",
+							"value": "11.0168445",
+							"type": "text"
+						},
+						{
+							"key": "cus_long",
+							"value": "76.95583209999995",
+							"type": "text"
+						},
+						{
+							"key": "cus_image",
+							"type": "file",
+							"src": ""
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "otp",
+							"value": "342595",
+							"type": "text"
+						},
+						{
+							"key": "current_otp",
+							"value": "342595",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_update_account_with_otp",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_update_account_with_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_ship_address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL3JlZ2lzdHJhdGlvbiIsImlhdCI6MTU1NzIyMTgxOCwibmJmIjoxNTU3MjIxODE4LCJqdGkiOiJ3TDNRUll4R29FTUZlNXdmIiwic3ViIjo2NSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ncCR3GdrbS8ZAvuEUCj5dU8sJjGPuc9nN0NIaB07c8k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "https://shopurfood.mytaxisoft.com/api/customer/customer_ship_address",
+					"protocol": "https",
+					"host": [
+						"shopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"customer_ship_address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_update_shipadd",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1ODk2MDM2MSwibmJmIjoxNTU4OTYwMzYxLCJqdGkiOiJtZVhSVVpxNGJqVVM3VDhjIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.iVpM4lZYOyyb3HYBgzk9oieCnTHWTe2pO55EXE7QYxY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"lang\":\"en\",\"sh_cus_email\":\"suganya.t@pofitec.com\",\"sh_cus_fname\":\"suganya\",\"sh_cus_lname\":\"t\",\"sh_latitude\":\"11.018315248968305\",\"sh_location\":\"Pofi technologies, Gandhipuram, Coimbatore, Tamil Nadu 641012, India\",\"sh_longitude\":\"76.96414735168219\",\"sh_phone1\":\"+19658231542\",\"sh_phone2\":\"+12548152339\",\"sh_zipcode\":\"641012\",\"sh_location1\" : \"1st floor\"}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_update_shipadd",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_update_shipadd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_Reset_Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1Mzc1NjExMCwiZXhwIjoxNTUzNzU5NzEwLCJuYmYiOjE1NTM3NTYxMTAsImp0aSI6ImVFZTBLNno0NEd5S09BRGkiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.7iOPCN1Hz-AvVviMi9bEVF23iWIFnFVcva3yPsTZo4A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"old_password\":\"123456fF$\",\n\"new_password\":\"123456\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_reset_password",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_reset_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_Get_PaymentSettings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU0OTU0NjMwNSwiZXhwIjoxNTQ5NTQ5OTA1LCJuYmYiOjE1NDk1NDYzMDUsImp0aSI6IkF4Y1RlZDlVMDZPbTBnVG0iLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.Bs-0n5ChoMWNjh7UnZgcR1echFcYYC3xLgeNf_h3rZw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_payment_settings",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_payment_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_update_payment_settings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1OTA0MDg1OCwibmJmIjoxNTU5MDQwODU4LCJqdGkiOiIwaGlENHowUUlTRXBrM2pRIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.yMqVJXT3vQIgX5Yj6IFxtteEh22VuELnsLW1AC0HHiY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"paypal_status\" : \"Unpublish\",\r\n\"paypal_clientId\" : \"Acw2kxT_SEDvM1Ph61U2sWmByv7Urm8ckeISw-_Sq3RzQt1QgD3n6v-lIR7mBk2XcVCAM5fpvn3xaY0-\",\r\n\"paypal_secretId\" : \"EA7vzEvTJZ5X42WAwCYdjuvYd_cHaZeN2zj4_PcEVHAsf8OIx9gtTcdFbSRt-wkIs5uhUuUVZ8K2WJmQ\",\r\n\"netBanking_status\" : \"Unpublish\",\r\n\"netBanking_bankName\" : \"Iob\",\r\n\"netBanking_branch\" : \"Avinashi\",\r\n\"netBanking_accNo\" : \"7553\",\r\n\"netBanking_ifsc\" : \"895655\",\r\n\"lang\" : \"en\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_update_payment_settings",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_update_payment_settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_My_Wishlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbW9iaWxlYXBwc2hvcHVyZm9vZC5teXRheGlzb2Z0LmNvbS9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MTk1Nzg0NCwiZXhwIjoxNTUxOTYxNDQ0LCJuYmYiOjE1NTE5NTc4NDQsImp0aSI6InB6VzlUVWRvaUtQNGxCdk8iLCJzdWIiOjYzLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.WKT1p9w1KqySlkNnPFoP3wgLBVm3RLwZvI8Hm03jiOM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page_no\":\"1\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_wishlist",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_wishlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refer_Friend",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODkyMDgsImV4cCI6MTU0NzI5MjgwOCwibmJmIjoxNTQ3Mjg5MjA4LCJqdGkiOiI0OE5qS2V3TVIxcVIzeWZmIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SdnYZmVJb4y_f5ct0Ict3mlZQKAjS6vuoHROk2zTC04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/customer_refer_friend",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"customer_refer_friend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send mail in refer friend",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL3VzZXJfbG9naW4iLCJpYXQiOjE1NTM4NTU5NzYsImV4cCI6MTU1Mzg1OTU3NiwibmJmIjoxNTUzODU1OTc2LCJqdGkiOiJsZkxjdlVTNXdMY0FyajRXIiwic3ViIjoxMCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.IT-_lhMvejbz9uHL0iRZtdsf-v9RV55Vf0D2Da5IxUs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"referral_email\" : \"nagoormeeran@mailinator.com\",\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/customer/refer_friend_send_mail",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"refer_friend_send_mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My wallet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MTg3ODcyNCwiZXhwIjoxNTUxODgyMzI0LCJuYmYiOjE1NTE4Nzg3MjQsImp0aSI6IjI5cVhER3Y1OVlTQnpXNEwiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.pSSA0qozaao_rWz7nB5WXJJZYnp_lJ_BoY0QB86w8Vo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\",\n\t\"page_no\" : \"\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/my_wallet",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"my_wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My_orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1NjM1MjgzMywibmJmIjoxNTU2MzUyODMzLCJqdGkiOiJDQ052MzB2dlVaVXFaRjlaIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.A27SItrdvjd2kWZO2m-3X9qAGvDrYB9SHOfHRrHR_VI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page_no\":\"1\",\n\"lang\":\"en\",\n\"order_num\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/my_orders",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"my_orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My_orders_Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1NDM3MjM5MywibmJmIjoxNTU0MzcyMzkzLCJqdGkiOiJsTEU1dEdwMVFJYW9IUDVXIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.X9e41H65UnO7M8lEjwScAZ6UwTrbDzFze35sS5mxAXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"lang\":\"en\",\n\"order_id\":\"Paypal381955346\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/my_order_details",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"my_order_details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repeat order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1NDk3Njc1MCwibmJmIjoxNTU0OTc2NzUwLCJqdGkiOiJuOGZCYldBRzlFd0sza0gwIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.6BMJNSqreG3-LidG0JCEhzRi19XudA_JaBy22zldQEA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\"\t : \"en\",\n\"order_id\" :\"COD-1924958232\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/repeat_order",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"repeat_order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoice",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL3VzZXJfbG9naW4iLCJpYXQiOjE1NTQ5NTY0ODcsIm5iZiI6MTU1NDk1NjQ4NywianRpIjoielFZazhFUFNOVXdCRUEwbyIsInN1YiI6MjgsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.eXPZSu3NLo-zxCWduecCGnOi8W9d8E1houHLkb83d2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\":\"en\",\n\"order_id\":\"COD-1360834096\"\n}"
+				},
+				"url": {
+					"raw": "https://shopurfood.mytaxisoft.com/api/customer/customer_invoice",
+					"protocol": "https",
+					"host": [
+						"shopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"customer_invoice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel_order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MDgzMDkxMCwiZXhwIjoxNTUwODM0NTEwLCJuYmYiOjE1NTA4MzA5MTAsImp0aSI6IkthV2puM0ZwQ1ROQWRQRTEiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.BxeQQE6yuU9GpgAJrO9KCmuskJme0fNLCiQVdCuId74",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"reason\": \"test cancel from mobile app\",\r\n\"orderId\": \"25\",\r\n\"lang\":\"en\"\r\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/cancel_order",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"cancel_order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order tracking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL2dvb2dsZV9sb2dpbiIsImlhdCI6MTU1NjI2MDkyNywibmJmIjoxNTU2MjYwOTI3LCJqdGkiOiJKb3IxZXl5NmtpWnU5OVdjIiwic3ViIjo3NCwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.fQ0i8WNxMxwB1kgszdxDJLcc6G0rhkFr9q2jmLuq6q4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"order_id\":\"COD-2121783164\",\r\n\"store_id\":\"3\",\r\n\"lang\" : \"en\"\r\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/customer/order_tracking",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"order_tracking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refund details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDc4MTQwMjMsImV4cCI6MTU0NzgxNzYyMywibmJmIjoxNTQ3ODE0MDIzLCJqdGkiOiJWTnozMTR4UDFSZ01BQWJGIiwic3ViIjoyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.YdtOX7zW2h2kUsIXMPsmIRALjZqq-G3uJHMh2rKoj7A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\"\t:\"en\",\n\"order_id\" : \"COD-1792846070\"\n}"
+				},
+				"url": {
+					"raw": "192.168.0.65/edison_grocery_v1/api/customer/refund_details",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"refund_details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_Product_Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODkyMDgsImV4cCI6MTU0NzI5MjgwOCwibmJmIjoxNTQ3Mjg5MjA4LCJqdGkiOiI0OE5qS2V3TVIxcVIzeWZmIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SdnYZmVJb4y_f5ct0Ict3mlZQKAjS6vuoHROk2zTC04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page_no\":\"1\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/customer_product_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"customer_product_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_Item_Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODkyMDgsImV4cCI6MTU0NzI5MjgwOCwibmJmIjoxNTQ3Mjg5MjA4LCJqdGkiOiI0OE5qS2V3TVIxcVIzeWZmIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SdnYZmVJb4y_f5ct0Ict3mlZQKAjS6vuoHROk2zTC04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page_no\":\"1\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/customer_item_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"customer_item_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_Store_Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODkyMDgsImV4cCI6MTU0NzI5MjgwOCwibmJmIjoxNTQ3Mjg5MjA4LCJqdGkiOiI0OE5qS2V3TVIxcVIzeWZmIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SdnYZmVJb4y_f5ct0Ict3mlZQKAjS6vuoHROk2zTC04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page_no\":\"1\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/customer_store_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"customer_store_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_Restaurant_review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODkyMDgsImV4cCI6MTU0NzI5MjgwOCwibmJmIjoxNTQ3Mjg5MjA4LCJqdGkiOiI0OE5qS2V3TVIxcVIzeWZmIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SdnYZmVJb4y_f5ct0Ict3mlZQKAjS6vuoHROk2zTC04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page_no\":\"1\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/customer_rest_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"customer_rest_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer_Order_review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MzY3MDY2MiwiZXhwIjoxNTUzNjc0MjYyLCJuYmYiOjE1NTM2NzA2NjIsImp0aSI6Ik1kbnpzMkVyOEtnVkoyVFAiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.rN1L0w0lEo6yynGeUOfKj8YAW3rFyLgTc5EUMRPWPpE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"page_no\":\"1\",\n\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/customer_order_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"customer_order_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductWriteReview",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyODkyMDgsImV4cCI6MTU0NzI5MjgwOCwibmJmIjoxNTQ3Mjg5MjA4LCJqdGkiOiI0OE5qS2V3TVIxcVIzeWZmIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.SdnYZmVJb4y_f5ct0Ict3mlZQKAjS6vuoHROk2zTC04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"product_id\":\"2\",\n  \"review_comments\":\"Good Comments\",\n  \"review_rating\":\"5\",\n  \"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/product_write_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"product_write_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StoreWriteReview",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuNjVcL2VkaXNvbl9ncm9jZXJ5X3YxXC9hcGlcL3VzZXJfbG9naW4iLCJpYXQiOjE1NDcyOTI5MzEsImV4cCI6MTU0NzI5NjUzMSwibmJmIjoxNTQ3MjkyOTMxLCJqdGkiOiJOSm82Y24yMEZRaW9PN3l2Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.p6kNiLOMfhm_QIOKwPp0KNkABPZ-hXIMq8P7uQCIcz8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"store_id\":\"2\",\n  \"review_comments\":\"Good Comments\",\n  \"review_rating\":\"5\",\n  \"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/edison_grocery_v1/api/customer/store_write_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"store_write_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrderWriteReview",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MzY3MDY2MiwiZXhwIjoxNTUzNjc0MjYyLCJuYmYiOjE1NTM2NzA2NjIsImp0aSI6Ik1kbnpzMkVyOEtnVkoyVFAiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.rN1L0w0lEo6yynGeUOfKj8YAW3rFyLgTc5EUMRPWPpE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"order_id\":\"COD-1764418885\",\n  \"store_id\" : \"3\",\n  \"deliver_id\" : \"3\",\n  \"review_comments\":\"Good Comments\",\n  \"review_rating\":\"5\",\n  \"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/order_write_review",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"order_write_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer_logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL3VzZXJfbG9naW4iLCJpYXQiOjE1NTQ4NzIzMjQsIm5iZiI6MTU1NDg3MjMyNCwianRpIjoiaTNvTk50a1RhRmJ6Q3RybyIsInN1YiI6MzAsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.QjWwufB1JpqtpLedAs5m6ibMPliQaTzmRwulYe8IzMI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"andr_device_id\":\"dHgz6EU1mCo\",\"lang\":\"en\",\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL3VzZXJfbG9naW4iLCJpYXQiOjE1NTQ4NzIzMjQsIm5iZiI6MTU1NDg3MjMyNCwianRpIjoiaTNvTk50a1RhRmJ6Q3RybyIsInN1YiI6MzAsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.QjWwufB1JpqtpLedAs5m6ibMPliQaTzmRwulYe8IzMI\",\"type\":\"android\"}"
+				},
+				"url": {
+					"raw": "https://shopurfood.mytaxisoft.com/api/customer/customer_logout",
+					"protocol": "https",
+					"host": [
+						"shopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"customer",
+						"customer_logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My cart - reference",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuODVcL3Byb2plY3RzXC9lZGlzb25fZ3JvY2VyeV92MVwvYXBpXC91c2VyX2xvZ2luIiwiaWF0IjoxNTQ1MDQ3ODAwLCJleHAiOjE1NDUwNTE0MDAsIm5iZiI6MTU0NTA0NzgwMCwianRpIjoibHdlU1FRZWZoYUgxcDFhNiIsInN1YiI6MjQsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.AE4clQrzlBPtb62kDV7CwfodWT7katcLfZELZQ363zA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "cart_st_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.0.85/projects/edison_grocery_v1/api/customer/cart_detail_byrestID",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"85"
+					],
+					"path": [
+						"projects",
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"cart_detail_byrestID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MYcart_1 - reference",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuODVcL3Byb2plY3RzXC9lZGlzb25fZ3JvY2VyeV92MVwvYXBpXC91c2VyX2xvZ2luIiwiaWF0IjoxNTQ1MDQ3ODAwLCJleHAiOjE1NDUwNTE0MDAsIm5iZiI6MTU0NTA0NzgwMCwianRpIjoibHdlU1FRZWZoYUgxcDFhNiIsInN1YiI6MjQsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.AE4clQrzlBPtb62kDV7CwfodWT7katcLfZELZQ363zA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.0.85/projects/edison_grocery_v1/api/customer/cart_restaurant_wise",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"85"
+					],
+					"path": [
+						"projects",
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"cart_restaurant_wise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MYcart_2 - reference",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuODVcL3Byb2plY3RzXC9lZGlzb25fZ3JvY2VyeV92MVwvYXBpXC91c2VyX2xvZ2luIiwiaWF0IjoxNTQ1MDQ3ODAwLCJleHAiOjE1NDUwNTE0MDAsIm5iZiI6MTU0NTA0NzgwMCwianRpIjoibHdlU1FRZWZoYUgxcDFhNiIsInN1YiI6MjQsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.AE4clQrzlBPtb62kDV7CwfodWT7katcLfZELZQ363zA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "cart_st_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.0.85/projects/edison_grocery_v1/api/customer/cart_detail_byrestID",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"85"
+					],
+					"path": [
+						"projects",
+						"edison_grocery_v1",
+						"api",
+						"customer",
+						"cart_detail_byrestID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My reviews",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbW9iaWxlYXBwc2hvcHVyZm9vZC5teXRheGlzb2Z0LmNvbS9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MTQzODA3NCwiZXhwIjoxNTUxNDQxNjc0LCJuYmYiOjE1NTE0MzgwNzQsImp0aSI6Im1CcnljRzN1WmRBU0hCTEoiLCJzdWIiOjIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.cqb1PK-Jfj2Ib4jBbggqSRUchHb_IlqsB-XFZMCbJDY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\" :\"en\",\n\t\"page_no\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/my_reviews",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"my_reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert Currency",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"from\" :\"INR\",\n\"to\" :\"USD\",\n\"amount\" :\"120\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/convert_currency",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"convert_currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get delivery location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MDgzMDkxMCwiZXhwIjoxNTUwODM0NTEwLCJuYmYiOjE1NTA4MzA5MTAsImp0aSI6IkthV2puM0ZwQ1ROQWRQRTEiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.BxeQQE6yuU9GpgAJrO9KCmuskJme0fNLCiQVdCuId74",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"deliver_id\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/get_deliver_location",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"get_deliver_location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Quantity and Payment Check",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MjAyNTU1NCwiZXhwIjoxNTUyMDI5MTU0LCJuYmYiOjE1NTIwMjU1NTQsImp0aSI6IlRPZkc1OUNyc2p6Wnl3bEkiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.fHFNVkuA2DvU-bx6qQvyYFXKlYUCJo5HjtpjFcw5Du0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/check_qty_payment",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"check_qty_payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save shipping address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvdXNlcl9sb2dpbiIsImlhdCI6MTU1MjMwMzQ5MSwiZXhwIjoxNTUyMzA3MDkxLCJuYmYiOjE1NTIzMDM0OTEsImp0aSI6IjdZdzFFaW5taG96dmZQQTAiLCJzdWIiOjEwLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.nuYYNGWOo_1pw3aD6-JEE9RsYpY4TCk0rXM4By5Zp9c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\" :\"en\",\n\t\"search_latitude\" :\"11.0168445\",\n\t\"search_longitude\" :\"76.95583209999995\",\n\t\"location\" : \"Coimbatore, Tamil Nadu, India\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/customer/save_shipping_address",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"customer",
+						"save_shipping_address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Help",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/help",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"help"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Terms and conditions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/terms",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"terms"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

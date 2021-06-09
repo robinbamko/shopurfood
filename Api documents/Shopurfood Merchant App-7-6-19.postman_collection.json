@@ -1,0 +1,1173 @@
+{
+	"info": {
+		"_postman_id": "8d6325ca-083e-4b1d-974a-e35527158a59",
+		"name": "Shopurfood Merchant App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"andr_device_id\":\"9faed0bb9f714a56\",\"login_id\":\"kumarkailash075@gmail.com\",\"andr_fcm_id\":\"dObTGwTs8t8:APA91bGFUOuoVFJB6xWgxyoEFNWmKcPWmMjR1AvUBP-n1tijl4r91sTuo8oiNekJ4afYxNgmsGMjtrWu1Ltyn5BEBCAkod-dCMRRzaGcsIy3jLorIrRPlkzKBwKEYeMmAqdv4_L9Ebec\",\"merchant_password\":\"123456\",\"type\":\"android\",\"lang\":\"en\"}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/merchant-login",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home page",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" : \"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant-home-page",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant-home-page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTUzMjMxNzY2LCJleHAiOjE1NTMyMzUzNjYsIm5iZiI6MTU1MzIzMTc2NiwianRpIjoiSFYxcHZuSmVIQmJmTGUyaiIsInN1YiI6NSwicHJ2IjoiOWRhNWQ1MzI2YTE4NGFmN2I0ZTRjZDZmNzJhZTU5NDFmMDUzZDIzNCJ9.ooOu94JlPN3CUgqbRh_SeIOrkO_Yhyo31_rfXfth7F0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/merchant/dashboard",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfQnJhbmNoX3YyLjAvYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU0OTcwNDc5LCJuYmYiOjE1NTQ5NzA0NzksImp0aSI6IkNHZVZnNUVyV3NjTzdtQTAiLCJzdWIiOjQsInBydiI6IjlkYTVkNTMyNmExODRhZjdiNGU0Y2Q2ZjcyYWU1OTQxZjA1M2QyMzQifQ.k7uTJXWD39mehTyUsTE58GSdrm88gYbgrbWaABL-YlA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\",\n\t\"page_no\" :\"1\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_Branch_v2.0/api/merchant/new-orders",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_Branch_v2.0",
+						"api",
+						"merchant",
+						"new-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Processing orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU2MTczMjk1LCJuYmYiOjE1NTYxNzMyOTUsImp0aSI6IjlOOGlpODlvOHFyVjhjVmEiLCJzdWIiOjUsInBydiI6IjlkYTVkNTMyNmExODRhZjdiNGU0Y2Q2ZjcyYWU1OTQxZjA1M2QyMzQifQ.YH2nzN1MOr0m-rtO_-lAqF3zWxKsWxkgWnGmEh4uh4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\",\n\t\"page_no\" :\"1\",\n\t\"status\" :\"2\",\n\t\"cancel_status\" : \"\"\n\t\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/merchant/preparing-orders",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"preparing-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delivered orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTUzMjMxNzY2LCJleHAiOjE1NTMyMzUzNjYsIm5iZiI6MTU1MzIzMTc2NiwianRpIjoiSFYxcHZuSmVIQmJmTGUyaiIsInN1YiI6NSwicHJ2IjoiOWRhNWQ1MzI2YTE4NGFmN2I0ZTRjZDZmNzJhZTU5NDFmMDUzZDIzNCJ9.ooOu94JlPN3CUgqbRh_SeIOrkO_Yhyo31_rfXfth7F0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"lang\":\"en\",\r\n        \"page_no\" :\"3\",\r\n        \"search_text\" :\"\",\r\n        \"from_date\" :\"\",\r\n        \"to_date\" :\"\"\r\n        \r\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/merchant/delivered-orders",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"delivered-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoice Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU1MTQyNTg5LCJuYmYiOjE1NTUxNDI1ODksImp0aSI6IkJ2VkNXUEs4ektBNWtFNnciLCJzdWIiOjE5LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.Ff1slV5TA4v35IsgtG-6AorjuqhnbtFyVQV61YBhe2s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\",\n\t\"order_id\" : \"STRIPE-1721985008\"\n}"
+				},
+				"url": {
+					"raw": "https://shopurfood.mytaxisoft.com/api/merchant/invoice-detail",
+					"protocol": "https",
+					"host": [
+						"shopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"invoice-detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept/ Reject item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTMyNTE4NzAsImV4cCI6MTU1MzI1NTQ3MCwibmJmIjoxNTUzMjUxODcwLCJqdGkiOiJwaWhGVFEyV2w0MWRDeEFrIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.Hw77Hn1ZF3_qKghZ4QcQ-eRBsFpN3cGl5s9KK3xkkUo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"ord_id\" :\"2\",\n\"status\" : \"3\",\n\"reject_reason\" : \"Reject in mobile app\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/accept-reject-item",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"accept-reject-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTMyNDIyOTMsImV4cCI6MTU1MzI0NTg5MywibmJmIjoxNTUzMjQyMjkzLCJqdGkiOiJ2WFVrRTA0RUVFcmR3a3FyIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.bUH-CkVx-xnp3ktijmry5dKjqUwATMj5-jRa_2LA26s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\" : \"en\",\n\t\"status\" :\"4\",\n\t\"ord_id\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/change-status",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"change-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Commission Tracking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfQnJhbmNoX3YyLjAvYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU0OTcwNDc5LCJuYmYiOjE1NTQ5NzA0NzksImp0aSI6IkNHZVZnNUVyV3NjTzdtQTAiLCJzdWIiOjQsInBydiI6IjlkYTVkNTMyNmExODRhZjdiNGU0Y2Q2ZjcyYWU1OTQxZjA1M2QyMzQifQ.k7uTJXWD39mehTyUsTE58GSdrm88gYbgrbWaABL-YlA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_Branch_v2.0/api/merchant/commission-tracking",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_Branch_v2.0",
+						"api",
+						"merchant",
+						"commission-tracking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTUyMzcwMTQxLCJleHAiOjE1NTIzNzM3NDEsIm5iZiI6MTU1MjM3MDE0MSwianRpIjoiZW84OHVTb3ZzVzdCT0IzZiIsInN1YiI6NSwicHJ2IjoiOWRhNWQ1MzI2YTE4NGFmN2I0ZTRjZDZmNzJhZTU5NDFmMDUzZDIzNCJ9.H0kmQd9cr5aj7K3bGA8E6WCviezq-eqe-zPDjaq14wE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"from_date\" :\"\",\n\"to_date\" :\"\",\n\"page_no\" :\"\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/merchant/transaction-history",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"transaction-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTA4MzU4MDAsImV4cCI6MTU1MDgzOTQwMCwibmJmIjoxNTUwODM1ODAwLCJqdGkiOiJaNHp1ZkF2ZmI5S2tVMzYzIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.zRXC7fDtmGkdvZP4dyo5U374wHKavKQdpXvBnyKZEw8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"amount\" :\"100.00\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/pay_request",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"pay_request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L1Nob3B1cmZvb2RfdjIuMS9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTQxMjMzNzMsIm5iZiI6MTU1NDEyMzM3MywianRpIjoicjI1QUE5T0ZpTnZhR1NpTyIsInN1YiI6NSwicHJ2IjoiOWRhNWQ1MzI2YTE4NGFmN2I0ZTRjZDZmNzJhZTU5NDFmMDUzZDIzNCJ9.XzKN-6eG2GUz2vMlRVrwj_Xu2K5E_Fh8c2Yc1u_baBM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\"\n\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/my_profile",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"my_profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU0ODk2OTYxLCJuYmYiOjE1NTQ4OTY5NjEsImp0aSI6InZ2eDFoaDBSMWV0djhjdUQiLCJzdWIiOjEwLCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.XREPj8sUfDbUTFoSnSHjwi3NTtRDSTzSXe0gNtNb_V4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mer_avail_status\":\"Busy\",\"mer_email\":\"suganya.t@pofitec.com\",\"mer_fname\":\"Suganya\",\"mer_lname\":\"T\",\"mer_phone\":\"+1986545456465\",\"lang\":\"en\"}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/merchant/update_profile",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"update_profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View payment setting",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTE2OTI0ODUsImV4cCI6MTU1MTY5NjA4NSwibmJmIjoxNTUxNjkyNDg1LCJqdGkiOiJOVzBoVlNEbk1UdEI5bTJvIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.CIaTFBYBKZVCZHB_vKYh3rpo_MZArt-bi-gHwvC3jAA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\"\n\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/view_payment_setting",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"view_payment_setting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Payment Setting",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTE2OTI0ODUsImV4cCI6MTU1MTY5NjA4NSwibmJmIjoxNTUxNjkyNDg1LCJqdGkiOiJOVzBoVlNEbk1UdEI5bTJvIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.CIaTFBYBKZVCZHB_vKYh3rpo_MZArt-bi-gHwvC3jAA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"mer_stripe_status\" :\"Publish\",\n\t\"mer_stripe_clientid\" :\"\",\n\t\"mer_stripe_secretid\" :\"\",\n\t\"mer_paypal_status\" :\"Unpublish\",\n\t\"mer_paypal_clientid\" :\"Acw2kxT_SEDvM1Ph61U2sWmByv7Urm8ckeISw-_Sq3RzQt1QgD3n6v-lIR7mBk2XcVCAM5fpvn3xaY0-\",\n\t\"mer_paypal_secretid\" :\"EA7vzEvTJZ5X42WAwCYdjuvYd_cHaZeN2zj4_PcEVHAsf8OIx9gtTcdFbSRt-wkIs5uhUuUVZ8K2WJmQ\",\n\t\"mer_netbank_status\" :\"Unpublish\",\n\t\"mer_bank_name\" :\"Iob\",\n\t\"mer_branch\" :\"Avinashi\",\n\t\"mer_bank_accno\" :\"7553\",\n\t\"mer_ifsc\" :\"895655\",\n\t\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/update_payment_setting",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"update_payment_setting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTA3NDYzNjcsImV4cCI6MTU1MDc0OTk2NywibmJmIjoxNTUwNzQ2MzY3LCJqdGkiOiIyNDRMZlBrWmsxR21wRDZGIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.nP-1PVP6Ojwb76CuJHdx3W24C77mboF07LWqoc7vIvI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\" :\"en\",\n\t\"old_password\" :\"456789\",\n\t\"new_password\" :\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/change_password",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"mer_email\":\"kumarkailash075@gmail.com\",\n\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant_forgot_password",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant_forgot_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTIyODU4MTAsImV4cCI6MTU1MjI4OTQxMCwibmJmIjoxNTUyMjg1ODEwLCJqdGkiOiJPVXlicUpoZHp4Q1R2Q29YIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.8OAE9lygExNvMktUTmMOvSNOevmVyvid0lUqe-aapOk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"item_id\":\"3241\",\n\"restaurant_id\" :\"3\",\n\"status\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/update_status",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"update_status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stock management",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfQnJhbmNoX3YyLjAvYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU0OTcwNDc5LCJuYmYiOjE1NTQ5NzA0NzksImp0aSI6IkNHZVZnNUVyV3NjTzdtQTAiLCJzdWIiOjQsInBydiI6IjlkYTVkNTMyNmExODRhZjdiNGU0Y2Q2ZjcyYWU1OTQxZjA1M2QyMzQifQ.k7uTJXWD39mehTyUsTE58GSdrm88gYbgrbWaABL-YlA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"page_no\" :\"1\",\n\"search_text\" :\"\"\n\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_Branch_v2.0/api/merchant/stock_management",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_Branch_v2.0",
+						"api",
+						"merchant",
+						"stock_management"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase quantity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTIzNjQzNjYsImV4cCI6MTU1MjM2Nzk2NiwibmJmIjoxNTUyMzY0MzY2LCJqdGkiOiJzQkFRVzVLc3BqRWtwU1dKIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.D8xadkY8Yy8elMCG_p4_fDwGrQqa8-hboQGtMX-00GM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"item_id\":\"3241\",\n\"restaurant_id\" :\"3\",\n\"quantity\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/increase_quantity",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"increase_quantity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrease quantity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTIzNjQzNjYsImV4cCI6MTU1MjM2Nzk2NiwibmJmIjoxNTUyMzY0MzY2LCJqdGkiOiJzQkFRVzVLc3BqRWtwU1dKIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.D8xadkY8Yy8elMCG_p4_fDwGrQqa8-hboQGtMX-00GM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"item_id\":\"3241\",\n\"restaurant_id\" :\"3\",\n\"quantity\" :\"6\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/decrease_quantity",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"decrease_quantity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notification list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL21vYmlsZWFwcHNob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTUyODg5NDAwLCJleHAiOjE1NTI4OTMwMDAsIm5iZiI6MTU1Mjg4OTQwMCwianRpIjoiT05WbzZTTHNYNjNnWUlTZyIsInN1YiI6NSwicHJ2IjoiOWRhNWQ1MzI2YTE4NGFmN2I0ZTRjZDZmNzJhZTU5NDFmMDUzZDIzNCJ9.aawYdLG-QEyOEnfAM5nC-9cKi7aj5uwlUdO2ksVjuw8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\" :\"en\",\n\"page_no\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "https://mobileappshopurfood.mytaxisoft.com/api/merchant/notification_list",
+					"protocol": "https",
+					"host": [
+						"mobileappshopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"notification_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preparing orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTI2MzEyOTYsImV4cCI6MTU1MjYzNDg5NiwibmJmIjoxNTUyNjMxMjk2LCJqdGkiOiJWcHJITTZPSXh2Z3JrTjloIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.Dm3ZKPh5-yFMMEd6eJawQyGFrdlHM5E079OFRzdgdvE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"en\",\n\t\"page_no\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/preparing-orders",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"preparing-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read notification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTI4ODg3MjQsImV4cCI6MTU1Mjg5MjMyNCwibmJmIjoxNTUyODg4NzI0LCJqdGkiOiJqenRLVGVpQnVoR2FZSnI0Iiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.FyzAlFzwYGKu9vdzG2XuW2VRfHUOJc-hHRW72Io2324",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : \"11\",\n\t\"read_status\" :\"1\",\n\t\"lang\" :\"en\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/read_notification",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"read_notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelleed Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTkyLjE2OC4wLjY1L3Nob3B1cmZvb2RfdjIuMC9hcGkvbWVyY2hhbnQtbG9naW4iLCJpYXQiOjE1NTI5MTA4NjksImV4cCI6MTU1MjkxNDQ2OSwibmJmIjoxNTUyOTEwODY5LCJqdGkiOiJzNFdVN01hMkdoVldQRHVMIiwic3ViIjo1LCJwcnYiOiI5ZGE1ZDUzMjZhMTg0YWY3YjRlNGNkNmY3MmFlNTk0MWYwNTNkMjM0In0.crlYD3NXfICI4_E211mr6HD2KCWMd7WBlCOLngksXXg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"lang\"\t :\"en\",\n\"page_no\" :\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.65/shopurfood_v2.0/api/merchant/cancelled-orders",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"65"
+					],
+					"path": [
+						"shopurfood_v2.0",
+						"api",
+						"merchant",
+						"cancelled-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU1MDQ1Mjc3LCJuYmYiOjE1NTUwNDUyNzcsImp0aSI6Ikx2SkFNY0xRRjB5VFRMYnIiLCJzdWIiOjQsInBydiI6IjlkYTVkNTMyNmExODRhZjdiNGU0Y2Q2ZjcyYWU1OTQxZjA1M2QyMzQifQ.i4MIGBsjdF511E7S1XwzVXJU3_4f_ubYlsmQ8m-gEjU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"lang\":\"en\",\r\n\t\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3Nob3B1cmZvb2QubXl0YXhpc29mdC5jb20vYXBpL21lcmNoYW50LWxvZ2luIiwiaWF0IjoxNTU1MDQ1Mjc3LCJuYmYiOjE1NTUwNDUyNzcsImp0aSI6Ikx2SkFNY0xRRjB5VFRMYnIiLCJzdWIiOjQsInBydiI6IjlkYTVkNTMyNmExODRhZjdiNGU0Y2Q2ZjcyYWU1OTQxZjA1M2QyMzQifQ.i4MIGBsjdF511E7S1XwzVXJU3_4f_ubYlsmQ8m-gEjU\",\r\n\t\"type\":\"ios\",\r\n\t\"andr_device_id\" :\"\",\r\n\t\"ios_device_id\" :\"3F82D4C9-7B1E-4210-AA5C-9BBEA392636E\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://shopurfood.mytaxisoft.com/api/merchant/logout",
+					"protocol": "https",
+					"host": [
+						"shopurfood",
+						"mytaxisoft",
+						"com"
+					],
+					"path": [
+						"api",
+						"merchant",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

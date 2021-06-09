@@ -1,0 +1,95 @@
+	<?php
+
+	   $lat1 = Session::get('Latitude');
+	   $lon1 = Session::get('Longitude');
+	   $store_latitude = $sore_details->stor_latitude;
+	   $store_longitude = $sore_details->stor_longitude;
+	   $theta = $lon1 - $store_longitude;
+	   $dist = sin(deg2rad($lat1)) * sin(deg2rad($store_latitude)) + cos(deg2rad($lat1)) * cos(deg2rad($store_latitude)) * cos(deg2rad($theta));
+	   $dist = acos($dist);
+	   $dist = rad2deg($dist);
+	   $miles = $dist * 60 * 1.1515;
+	   $unit = 'K';
+	   if ($unit == "K") {
+		   $km = $miles * 1.609344;
+	   }
+
+	?>
+	
+	
+	function haversineGreatCircleDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+	{
+	  // convert from degrees to radians
+	  $latFrom = deg2rad($latitudeFrom);
+	  $lonFrom = deg2rad($longitudeFrom);
+	  $latTo = deg2rad($latitudeTo);
+	  $lonTo = deg2rad($longitudeTo);
+
+	  $latDelta = $latTo - $latFrom;
+	  $lonDelta = $lonTo - $lonFrom;
+
+	  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) + cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+	  return $angle * $earthRadius;
+	}
+	
+	SELECT a.city AS from_city, b.city AS to_city, 
+   111.1111 *
+    DEGREES(ACOS(COS(RADIANS(a.Latitude))
+         * COS(RADIANS(b.Latitude))
+         * COS(RADIANS(a.Longitude) - RADIANS(b.Longitude))
+         + SIN(RADIANS(a.Latitude))
+         * SIN(RADIANS(b.Latitude)))) AS distance_in_km
+  FROM city AS a
+  JOIN city AS b ON a.id <> b.id
+ WHERE a.city = 3 AND b.city = 7
+
+ 
+	SELECT `id`, `st_type`,`st_store_name`,  `st_location`, `st_city`, `st_country`,  `st_address`, `st_latitude`, `st_longitude`, `st_delivery_radius` FROM `gr_store` WHERE 1
+	
+	
+	
+	SELECT a.city AS from_city, b.city AS to_city, 111.195 * DEGREES(ACOS(COS(RADIANS(a.Latitude)) * COS(RADIANS(b.Latitude)) * COS(RADIANS(a.Longitude) - RADIANS(b.Longitude)) + SIN(RADIANS(a.Latitude)) * SIN(RADIANS(b.Latitude)))) AS distance_in_km FROM city AS a JOIN city AS b ON a.id <> b.id WHERE a.city = 3 AND b.city = 7 
+	
+	SELECT a.city AS from_city, b.city AS to_city, 6371 * 2 * ASIN(SQRT(POWER(SIN((a.Latitude - abs(b.Latitude)) * pi()/180 / 2),2) + COS(a.Latitude * pi()/180 ) * COS(abs(b.Latitude) *pi()/180) * POWER(SIN((a.Longitude - b.Longitude) *pi()/180 / 2), 2) )) AS distance_in_km FROM city AS a JOIN city AS b ON a.id <> b.id WHERE a.city = 3 AND b.city = 7 
+	
+	
+	
+	SELECT `id`, `st_type`,`st_store_name`, `st_location`, `st_city`, `st_country`, `st_address`, `st_latitude`, `st_longitude`, `st_delivery_radius`,(6371 * 2 * ASIN(SQRT(POWER(SIN ((11.0168445 - abs(st_latitude)) * pi()/180 / 2),2) + COS(11.0168445 * pi()/180 ) * COS(abs(st_latitude) *pi()/180) * POWER(SIN((76.95583209999995 - st_longitude) *pi()/180 / 2), 2) ))) as distance_in_km FROM `gr_store` WHERE `st_type`=2
+	
+	
+	SELECT *
+	FROM (
+		SELECT COUNT(Genre) AS count
+		FROM movies
+		GROUP BY ID
+		HAVING (count = 4)
+	) AS x
+
+	
+	CREATE FUNCTION `lat_lng_distance` (lat1 FLOAT, lng1 FLOAT, lat2 FLOAT, lng2 FLOAT)
+    RETURNS FLOAT
+    DETERMINISTIC
+    BEGIN
+        RETURN 6371 * 2 * ASIN(SQRT(
+            POWER(SIN((lat1 - abs(lat2)) * pi()/180 / 2),
+            2) + COS(lat1 * pi()/180 ) * COS(abs(lat2) *
+            pi()/180) * POWER(SIN((lng1 - lng2) *
+            pi()/180 / 2), 2) ))
+			
+			
+			
+			
+			DELIMITER //
+			CREATE FUNCTION `lat_lng_distance` (lat1 FLOAT, lng1 FLOAT, lat2 FLOAT, lng2 FLOAT) RETURNS FLOAT DETERMINISTIC BEGIN RETURN 6371 * 2 * ASIN(SQRT( POWER(SIN((lat1 - (lat2)) * pi()/180 / 2), 2) + COS(lat1 * pi()/180 ) * COS(lat2) * pi()/180) * POWER(SIN((lng1 - lng2) * pi()/180 / 2), 2) ));END; //DELIMITER ;
+
+
+///new
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `lat_lng_distance`(`lat1` FLOAT, `lng1` FLOAT, `lat2` FLOAT, `lng2` FLOAT) RETURNS float
+BEGIN RETURN 6371 * 2 * ASIN(SQRT( POWER(SIN((lat1 - (lat2)) * pi()/180 / 2), 2) + COS(lat1 * pi()/180 ) * COS((lat2) * pi()/180) * POWER(SIN((lng1 - lng2) * pi()/180 / 2), 2) ));END$$
+DELIMITER ;
+			
+			
+			
+			select `st_logo`, `st_store_name` as `st_name`, `gr_store`.`id`,(SELECT lat_lng_distance('11.0168445','76.95982322701411',gr_store.st_latitude,gr_store.st_longitude)) as distance_in_km from `gr_store` inner join `gr_category` on `gr_category`.`cate_id` = `gr_store`.`st_category` inner join `gr_merchant` on `gr_merchant`.`id` = `gr_store`.`st_mer_id` where (`gr_merchant`.`mer_status` = '1') and (`gr_category`.`cate_status` = '1') and (`gr_category`.`cate_type` = '2') and (`gr_store`.`st_status` = '1') and (`gr_store`.`st_type` = '2') and (SELECT lat_lng_distance('11.0168445',76.95982322701411,gr_store.st_latitude,gr_store.st_longitude) <= gr_store.st_delivery_radius) limit 12
+			
